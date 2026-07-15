@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Insurance Calculator — How Much Coverage Do You Need? | Insurance Calculator Hub</title>
+<meta name="description" content="Free life insurance needs calculator using the DIME method (Debt, Income, Mortgage, Education). Estimate the right coverage amount in seconds.">
+<link rel="canonical" href="https://insurance-calculator-hub.pages.dev/life-insurance-calculator/">
+<meta property="og:title" content="Life Insurance Calculator — How Much Coverage Do You Need? | Insurance Calculator Hub">
+<meta property="og:description" content="Free life insurance needs calculator using the DIME method (Debt, Income, Mortgage, Education). Estimate the right coverage amount in seconds.">
+<meta property="og:url" content="https://insurance-calculator-hub.pages.dev/life-insurance-calculator/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Life Insurance Calculator — How Much Coverage Do You Need? | Insurance Calculator Hub","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://insurance-calculator-hub.pages.dev/life-insurance-calculator/","description":"Free life insurance needs calculator using the DIME method (Debt, Income, Mortgage, Education). Estimate the right coverage amount in seconds.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Insurance Calculator Hub","url":"https://insurance-calculator-hub.pages.dev","legalName":"Gesmine-Invest Limited","identifier":{"@type":"PropertyValue","propertyID":"UK Company Number","value":"14120136"},"address":{"@type":"PostalAddress","streetAddress":"Hardy House, 269 Poynders Gardens","addressLocality":"London","postalCode":"SW4 8PQ","addressCountry":"GB"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://insurance-calculator-hub.pages.dev/"},{"@type":"ListItem","position":2,"name":"Life Insurance Calculator","item":"https://insurance-calculator-hub.pages.dev/life-insurance-calculator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much life insurance do I actually need?","acceptedAnswer":{"@type":"Answer","text":"It depends on your income, debts, dependents, and financial goals. The DIME method (Debt + Income replacement + Mortgage + Education) gives a more accurate estimate than flat multiples of salary because it accounts for your actual obligations."}},{"@type":"Question","name":"Term or whole life insurance?","acceptedAnswer":{"@type":"Answer","text":"Term life insurance is generally cheaper and matches temporary needs (like a mortgage or raising kids), while whole life is permanent and includes a cash-value component at a higher premium. Most people shopping for pure income replacement choose term."}},{"@type":"Question","name":"Does employer-provided life insurance count as existing coverage?","acceptedAnswer":{"@type":"Answer","text":"Yes — include any group life insurance through your employer in the \"existing coverage\" field, but remember it typically ends if you leave your job, so many people supplement it with an individual policy."}}]}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="../" class="brand"><span class="dot">🛡</span> Insurance Calculator Hub</a>
+    <nav class="top">
+      <a href="../#calculators">Calculators</a>
+      <a href="../about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">DIME Method</span><br>
+    <h1>Life Insurance Calculator</h1>
+    <p class="lead">Free life insurance needs calculator using the DIME method (Debt, Income, Mortgage, Education). Estimate the right coverage amount in seconds.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="calc-card">
+    
+    <h2 style="margin-top:0;font-size:1.2rem;">Estimate Your Coverage Need</h2>
+    <div class="calc-grid">
+      <div class="field"><label>Annual Income ($)</label><input type="number" id="li-income" value="70000"></div>
+      <div class="field"><label>Years of Income to Replace</label><input type="number" id="li-years" value="10"><div class="hint">Typically 10-20 years, or until kids are independent.</div></div>
+      <div class="field"><label>Other Debts (excl. mortgage) ($)</label><input type="number" id="li-debt" value="15000"></div>
+      <div class="field"><label>Remaining Mortgage Balance ($)</label><input type="number" id="li-mortgage" value="220000"></div>
+      <div class="field"><label>Future Education Costs ($)</label><input type="number" id="li-education" value="60000"></div>
+      <div class="field"><label>Existing Life Insurance / Liquid Savings ($)</label><input type="number" id="li-existing" value="10000"></div>
+    </div>
+    <button class="calc-btn" onclick="calcLife()">Calculate Coverage Need</button>
+    <div class="result-box" id="li-result" style="display:none;">
+      <div class="result-row hero-result"><span class="k">Recommended Coverage</span><span class="v" id="li-total"></span></div>
+      <div class="result-row"><span class="k">Income Replacement (D I part)</span><span class="v" id="li-income-out"></span></div>
+      <div class="result-row"><span class="k">Debt + Mortgage</span><span class="v" id="li-debtmort-out"></span></div>
+      <div class="result-row"><span class="k">Education Fund</span><span class="v" id="li-edu-out"></span></div>
+      <div class="result-row"><span class="k">Less Existing Coverage</span><span class="v" id="li-existing-out"></span></div>
+    </div>
+  
+  </div>
+</div>
+
+<div class="wrap content">
+
+    <h2>What Is the DIME Method?</h2>
+    <p>DIME stands for <strong>Debt, Income, Mortgage, Education</strong> — a widely used rule-of-thumb formula for estimating how much life insurance coverage a family actually needs, rather than relying on generic multiples of salary (like "10x income"). It adds up every major financial obligation your family would face if your income stopped tomorrow, then subtracts assets already available to cover them.</p>
+    <h2>How the Calculation Works</h2>
+    <ul>
+      <li><strong>D — Debt:</strong> credit cards, car loans, personal loans, and any other non-mortgage debt.</li>
+      <li><strong>I — Income:</strong> your annual income multiplied by the number of years your family would need support (commonly until the youngest child turns 18 or finishes college).</li>
+      <li><strong>M — Mortgage:</strong> the remaining balance owed on your home.</li>
+      <li><strong>E — Education:</strong> estimated future cost of college or vocational training for your children.</li>
+    </ul>
+    <p>The tool subtracts any existing life insurance and liquid savings from the total, giving you the net additional coverage to shop for.</p>
+    <div class="disclaimer">This calculator provides an educational estimate only. Insurance needs vary by family, health status, and state. Speak with a licensed life insurance agent or financial advisor before purchasing a policy.</div>
+  
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>How much life insurance do I actually need?</h3><p>It depends on your income, debts, dependents, and financial goals. The DIME method (Debt + Income replacement + Mortgage + Education) gives a more accurate estimate than flat multiples of salary because it accounts for your actual obligations.</p></div><div class="faq-item"><h3>Term or whole life insurance?</h3><p>Term life insurance is generally cheaper and matches temporary needs (like a mortgage or raising kids), while whole life is permanent and includes a cash-value component at a higher premium. Most people shopping for pure income replacement choose term.</p></div><div class="faq-item"><h3>Does employer-provided life insurance count as existing coverage?</h3><p>Yes — include any group life insurance through your employer in the "existing coverage" field, but remember it typically ends if you leave your job, so many people supplement it with an individual policy.</p></div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Insurance Calculator Hub</h4>
+        <p style="font-size:.82rem;max-width:360px;color:#94a3b8;">Free, independent insurance and mortgage-insurance calculators. Estimates only — always confirm figures with a licensed agent or your policy documents before making a decision.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="../life-insurance-calculator/">Life Insurance</a>
+        <a href="../disability-insurance-calculator/">Disability Insurance</a>
+        <a href="../umbrella-insurance-calculator/">Umbrella Insurance</a>
+        <a href="../cobra-insurance-calculator/">COBRA Cost</a>
+        <a href="../title-insurance-calculator/">Title Insurance</a>
+        <a href="../pmi-removal-calculator/">PMI Removal</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="../about/">About &amp; Methodology</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© 2026 Insurance Calculator Hub. All calculators are for educational estimation purposes only and do not constitute insurance, financial, tax, or legal advice.</p>
+      <p>Insurance Calculator Hub is part of Gesmine-Invest Limited, registered UK company number 14120136, registered office address at Hardy House, 269 Poynders Gardens, London, London, United Kingdom, SW4 8PQ.</p>
+    </div>
+  </div>
+</footer>
+<script>
+function calcLife(){
+  const income=+document.getElementById('li-income').value||0;
+  const years=+document.getElementById('li-years').value||0;
+  const debt=+document.getElementById('li-debt').value||0;
+  const mortgage=+document.getElementById('li-mortgage').value||0;
+  const education=+document.getElementById('li-education').value||0;
+  const existing=+document.getElementById('li-existing').value||0;
+  const incomeReplacement=income*years;
+  const debtMortgage=debt+mortgage;
+  const gross=incomeReplacement+debtMortgage+education;
+  const net=Math.max(0,gross-existing);
+  const fmt=n=>'$'+Math.round(n).toLocaleString();
+  document.getElementById('li-total').textContent=fmt(net);
+  document.getElementById('li-income-out').textContent=fmt(incomeReplacement);
+  document.getElementById('li-debtmort-out').textContent=fmt(debtMortgage);
+  document.getElementById('li-edu-out').textContent=fmt(education);
+  document.getElementById('li-existing-out').textContent='-'+fmt(existing);
+  document.getElementById('li-result').style.display='block';
+}
+</script>
+</body>
+</html>

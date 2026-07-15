@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://insurance-calculator-hub.pages.dev/sitemap.xml

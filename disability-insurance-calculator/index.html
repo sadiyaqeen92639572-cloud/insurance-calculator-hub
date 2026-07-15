@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disability Insurance Calculator — Estimate Your Coverage Gap | Insurance Calculator Hub</title>
+<meta name="description" content="Calculate how much disability insurance coverage you need based on your income, existing employer benefits, and target income replacement percentage.">
+<link rel="canonical" href="https://insurance-calculator-hub.pages.dev/disability-insurance-calculator/">
+<meta property="og:title" content="Disability Insurance Calculator — Estimate Your Coverage Gap | Insurance Calculator Hub">
+<meta property="og:description" content="Calculate how much disability insurance coverage you need based on your income, existing employer benefits, and target income replacement percentage.">
+<meta property="og:url" content="https://insurance-calculator-hub.pages.dev/disability-insurance-calculator/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Disability Insurance Calculator — Estimate Your Coverage Gap | Insurance Calculator Hub","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://insurance-calculator-hub.pages.dev/disability-insurance-calculator/","description":"Calculate how much disability insurance coverage you need based on your income, existing employer benefits, and target income replacement percentage.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Insurance Calculator Hub","url":"https://insurance-calculator-hub.pages.dev","legalName":"Gesmine-Invest Limited","identifier":{"@type":"PropertyValue","propertyID":"UK Company Number","value":"14120136"},"address":{"@type":"PostalAddress","streetAddress":"Hardy House, 269 Poynders Gardens","addressLocality":"London","postalCode":"SW4 8PQ","addressCountry":"GB"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://insurance-calculator-hub.pages.dev/"},{"@type":"ListItem","position":2,"name":"Disability Insurance Calculator","item":"https://insurance-calculator-hub.pages.dev/disability-insurance-calculator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What percentage of income does disability insurance replace?","acceptedAnswer":{"@type":"Answer","text":"Most individual and group long-term disability policies replace 60-70% of gross income, since benefits are often received tax-free (for individually-paid premiums) and insurers want to preserve a financial incentive to return to work."}},{"@type":"Question","name":"What is an elimination period?","acceptedAnswer":{"@type":"Answer","text":"The elimination period is the waiting time (commonly 30, 60, or 90 days) between the start of a disability and when benefit payments begin. A longer elimination period generally lowers your premium but requires more emergency savings to bridge the gap."}},{"@type":"Question","name":"Does my employer's group disability policy cover enough?","acceptedAnswer":{"@type":"Answer","text":"Often not fully — many group policies replace only 50-60% of base salary and may exclude bonuses or commissions, plus benefits are usually taxable if your employer paid the premiums. An individual supplemental policy can close that gap."}}]}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="../" class="brand"><span class="dot">🛡</span> Insurance Calculator Hub</a>
+    <nav class="top">
+      <a href="../#calculators">Calculators</a>
+      <a href="../about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">Income Protection</span><br>
+    <h1>Disability Insurance Calculator</h1>
+    <p class="lead">Calculate how much disability insurance coverage you need based on your income, existing employer benefits, and target income replacement percentage.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="calc-card">
+    
+    <h2 style="margin-top:0;font-size:1.2rem;">Estimate Your Coverage Gap</h2>
+    <div class="calc-grid">
+      <div class="field"><label>Gross Monthly Income ($)</label><input type="number" id="di-income" value="6000"></div>
+      <div class="field"><label>Target Income Replacement (%)</label><input type="number" id="di-target" value="65"><div class="hint">Most insurers cap individual policies at 60-70% of income.</div></div>
+      <div class="field"><label>Existing Employer/Group Monthly Benefit ($)</label><input type="number" id="di-existing" value="1500"></div>
+      <div class="field"><label>Elimination Period (days before benefits start)</label><input type="number" id="di-elim" value="90"></div>
+    </div>
+    <button class="calc-btn" onclick="calcDisability()">Calculate Coverage Gap</button>
+    <div class="result-box" id="di-result" style="display:none;">
+      <div class="result-row hero-result"><span class="k">Additional Monthly Benefit Needed</span><span class="v" id="di-gap"></span></div>
+      <div class="result-row"><span class="k">Target Monthly Benefit</span><span class="v" id="di-target-out"></span></div>
+      <div class="result-row"><span class="k">Savings Needed to Cover Elimination Period</span><span class="v" id="di-elim-out"></span></div>
+    </div>
+  
+  </div>
+</div>
+
+<div class="wrap content">
+
+    <h2>Why Disability Insurance Matters</h2>
+    <p>A serious illness or injury is statistically far more likely to interrupt your income before retirement than death is — yet most workers carry life insurance and skip disability coverage entirely. Disability insurance replaces a portion of your income if you become unable to work.</p>
+    <h2>How This Calculator Works</h2>
+    <p>Insurers typically cap individual disability policies at 60-70% of gross income (to preserve the incentive to return to work). This tool multiplies your gross monthly income by your target replacement percentage, then subtracts any group/employer coverage you already have to show the remaining gap an individual policy should fill. It also estimates the savings you'd need on hand to bridge the "elimination period" — the waiting window before benefit payments begin.</p>
+    <div class="disclaimer">Estimate only. Actual underwriting, benefit caps, and elimination periods vary by insurer, occupation class, and state. Consult a licensed disability insurance broker for an accurate quote.</div>
+  
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>What percentage of income does disability insurance replace?</h3><p>Most individual and group long-term disability policies replace 60-70% of gross income, since benefits are often received tax-free (for individually-paid premiums) and insurers want to preserve a financial incentive to return to work.</p></div><div class="faq-item"><h3>What is an elimination period?</h3><p>The elimination period is the waiting time (commonly 30, 60, or 90 days) between the start of a disability and when benefit payments begin. A longer elimination period generally lowers your premium but requires more emergency savings to bridge the gap.</p></div><div class="faq-item"><h3>Does my employer's group disability policy cover enough?</h3><p>Often not fully — many group policies replace only 50-60% of base salary and may exclude bonuses or commissions, plus benefits are usually taxable if your employer paid the premiums. An individual supplemental policy can close that gap.</p></div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Insurance Calculator Hub</h4>
+        <p style="font-size:.82rem;max-width:360px;color:#94a3b8;">Free, independent insurance and mortgage-insurance calculators. Estimates only — always confirm figures with a licensed agent or your policy documents before making a decision.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="../life-insurance-calculator/">Life Insurance</a>
+        <a href="../disability-insurance-calculator/">Disability Insurance</a>
+        <a href="../umbrella-insurance-calculator/">Umbrella Insurance</a>
+        <a href="../cobra-insurance-calculator/">COBRA Cost</a>
+        <a href="../title-insurance-calculator/">Title Insurance</a>
+        <a href="../pmi-removal-calculator/">PMI Removal</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="../about/">About &amp; Methodology</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© 2026 Insurance Calculator Hub. All calculators are for educational estimation purposes only and do not constitute insurance, financial, tax, or legal advice.</p>
+      <p>Insurance Calculator Hub is part of Gesmine-Invest Limited, registered UK company number 14120136, registered office address at Hardy House, 269 Poynders Gardens, London, London, United Kingdom, SW4 8PQ.</p>
+    </div>
+  </div>
+</footer>
+<script>
+function calcDisability(){
+  const income=+document.getElementById('di-income').value||0;
+  const target=+document.getElementById('di-target').value||0;
+  const existing=+document.getElementById('di-existing').value||0;
+  const elim=+document.getElementById('di-elim').value||0;
+  const targetBenefit=income*(target/100);
+  const gap=Math.max(0,targetBenefit-existing);
+  const elimSavings=(income/30)*elim;
+  const fmt=n=>'$'+Math.round(n).toLocaleString();
+  document.getElementById('di-gap').textContent=fmt(gap)+'/mo';
+  document.getElementById('di-target-out').textContent=fmt(targetBenefit)+'/mo';
+  document.getElementById('di-elim-out').textContent=fmt(elimSavings);
+  document.getElementById('di-result').style.display='block';
+}
+</script>
+</body>
+</html>

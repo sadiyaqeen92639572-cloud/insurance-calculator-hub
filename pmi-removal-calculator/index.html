@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMI Removal Calculator — When Can You Cancel Private Mortgage Insurance? | Insurance Calculator Hub</title>
+<meta name="description" content="Calculate your current loan-to-value ratio and find out when you can request PMI cancellation or when it automatically terminates.">
+<link rel="canonical" href="https://insurance-calculator-hub.pages.dev/pmi-removal-calculator/">
+<meta property="og:title" content="PMI Removal Calculator — When Can You Cancel Private Mortgage Insurance? | Insurance Calculator Hub">
+<meta property="og:description" content="Calculate your current loan-to-value ratio and find out when you can request PMI cancellation or when it automatically terminates.">
+<meta property="og:url" content="https://insurance-calculator-hub.pages.dev/pmi-removal-calculator/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"PMI Removal Calculator — When Can You Cancel Private Mortgage Insurance? | Insurance Calculator Hub","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://insurance-calculator-hub.pages.dev/pmi-removal-calculator/","description":"Calculate your current loan-to-value ratio and find out when you can request PMI cancellation or when it automatically terminates.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Insurance Calculator Hub","url":"https://insurance-calculator-hub.pages.dev","legalName":"Gesmine-Invest Limited","identifier":{"@type":"PropertyValue","propertyID":"UK Company Number","value":"14120136"},"address":{"@type":"PostalAddress","streetAddress":"Hardy House, 269 Poynders Gardens","addressLocality":"London","postalCode":"SW4 8PQ","addressCountry":"GB"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://insurance-calculator-hub.pages.dev/"},{"@type":"ListItem","position":2,"name":"PMI Removal Calculator","item":"https://insurance-calculator-hub.pages.dev/pmi-removal-calculator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between PMI automatic termination and requested cancellation?","acceptedAnswer":{"@type":"Answer","text":"Automatic termination happens by law once your balance hits 78% of the original value, with no action needed on your part (as long as you're current on payments). Requested cancellation lets you remove PMI earlier, once you reach 80%, but you must proactively ask your servicer and may need to pay for a new appraisal."}},{"@type":"Question","name":"Can I remove PMI faster if my home value went up?","acceptedAnswer":{"@type":"Answer","text":"Yes — many lenders allow early PMI removal based on a new appraisal showing you've reached 80% loan-to-value using current market value, not just your original purchase price, though this typically requires a minimum 2 years of on-time payments (varies by lender)."}},{"@type":"Question","name":"Does PMI removal apply to FHA loans?","acceptedAnswer":{"@type":"Answer","text":"No — FHA loans use MIP (Mortgage Insurance Premium), which has separate rules and, on most FHA loans originated after 2013, cannot be removed without refinancing into a conventional loan."}}]}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="../" class="brand"><span class="dot">🛡</span> Insurance Calculator Hub</a>
+    <nav class="top">
+      <a href="../#calculators">Calculators</a>
+      <a href="../about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">Mortgage Insurance</span><br>
+    <h1>PMI Removal Calculator</h1>
+    <p class="lead">Calculate your current loan-to-value ratio and find out when you can request PMI cancellation or when it automatically terminates.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="calc-card">
+    
+    <h2 style="margin-top:0;font-size:1.2rem;">Check Your PMI Removal Eligibility</h2>
+    <div class="calc-grid">
+      <div class="field"><label>Original Home Purchase Price / Appraised Value ($)</label><input type="number" id="pi-original" value="350000"></div>
+      <div class="field"><label>Current Loan Balance ($)</label><input type="number" id="pi-balance" value="280000"></div>
+      <div class="field"><label>Current Estimated Home Value ($)</label><input type="number" id="pi-current" value="380000"><div class="hint">If your home appreciated, you may qualify sooner via a new appraisal.</div></div>
+      <div class="field"><label>Current Monthly PMI Payment ($)</label><input type="number" id="pi-pmi" value="140"></div>
+    </div>
+    <button class="calc-btn" onclick="calcPmi()">Check Eligibility</button>
+    <div class="result-box" id="pi-result" style="display:none;">
+      <div class="result-row hero-result"><span class="k">Current Loan-to-Value (LTV)</span><span class="v" id="pi-ltv"></span></div>
+      <div class="result-row"><span class="k">Status</span><span class="v" id="pi-status"></span></div>
+      <div class="result-row"><span class="k">Equity Needed to Reach 80% LTV</span><span class="v" id="pi-equity"></span></div>
+      <div class="result-row"><span class="k">Annual PMI Cost If Not Removed</span><span class="v" id="pi-annual"></span></div>
+    </div>
+  
+  </div>
+</div>
+
+<div class="wrap content">
+
+    <h2>When Does PMI Come Off Your Mortgage?</h2>
+    <p>Under the federal Homeowners Protection Act, lenders must <strong>automatically terminate</strong> PMI once your loan balance reaches 78% of the <em>original</em> home value (based on your amortization schedule). You can also proactively <strong>request cancellation</strong> once you reach 80% of the original value, or sooner if your home has appreciated — in that case, a new appraisal can prove you've reached 80% loan-to-value ahead of schedule.</p>
+    <h2>How This Calculator Works</h2>
+    <p>It computes your loan-to-value ratio two ways: against your original purchase price (the 78%/80% federal thresholds) and against your home's current estimated value (relevant if you're pursuing early removal via appraisal). It also shows how much annual PMI you're paying if you don't act, as motivation to check your eligibility regularly.</p>
+    <div class="disclaimer">Estimate only. PMI removal policy and appraisal requirements vary by lender and loan type (conventional, FHA, etc. — note FHA loans use MIP, not PMI, and have different removal rules). Contact your loan servicer to confirm your exact eligibility.</div>
+  
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>What is the difference between PMI automatic termination and requested cancellation?</h3><p>Automatic termination happens by law once your balance hits 78% of the original value, with no action needed on your part (as long as you're current on payments). Requested cancellation lets you remove PMI earlier, once you reach 80%, but you must proactively ask your servicer and may need to pay for a new appraisal.</p></div><div class="faq-item"><h3>Can I remove PMI faster if my home value went up?</h3><p>Yes — many lenders allow early PMI removal based on a new appraisal showing you've reached 80% loan-to-value using current market value, not just your original purchase price, though this typically requires a minimum 2 years of on-time payments (varies by lender).</p></div><div class="faq-item"><h3>Does PMI removal apply to FHA loans?</h3><p>No — FHA loans use MIP (Mortgage Insurance Premium), which has separate rules and, on most FHA loans originated after 2013, cannot be removed without refinancing into a conventional loan.</p></div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Insurance Calculator Hub</h4>
+        <p style="font-size:.82rem;max-width:360px;color:#94a3b8;">Free, independent insurance and mortgage-insurance calculators. Estimates only — always confirm figures with a licensed agent or your policy documents before making a decision.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="../life-insurance-calculator/">Life Insurance</a>
+        <a href="../disability-insurance-calculator/">Disability Insurance</a>
+        <a href="../umbrella-insurance-calculator/">Umbrella Insurance</a>
+        <a href="../cobra-insurance-calculator/">COBRA Cost</a>
+        <a href="../title-insurance-calculator/">Title Insurance</a>
+        <a href="../pmi-removal-calculator/">PMI Removal</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="../about/">About &amp; Methodology</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© 2026 Insurance Calculator Hub. All calculators are for educational estimation purposes only and do not constitute insurance, financial, tax, or legal advice.</p>
+      <p>Insurance Calculator Hub is part of Gesmine-Invest Limited, registered UK company number 14120136, registered office address at Hardy House, 269 Poynders Gardens, London, London, United Kingdom, SW4 8PQ.</p>
+    </div>
+  </div>
+</footer>
+<script>
+function calcPmi(){
+  const original=+document.getElementById('pi-original').value||0;
+  const balance=+document.getElementById('pi-balance').value||0;
+  const current=+document.getElementById('pi-current').value||0;
+  const pmi=+document.getElementById('pi-pmi').value||0;
+  const ltvOriginal=original>0?(balance/original)*100:0;
+  const ltvCurrent=current>0?(balance/current)*100:0;
+  const fmt=n=>'$'+Math.round(n).toLocaleString();
+  document.getElementById('pi-ltv').textContent=ltvCurrent.toFixed(1)+'% (based on current value)';
+  let status='', cls='';
+  if(ltvOriginal<=78){status='Automatic termination required by law';cls='risk-low';}
+  else if(ltvOriginal<=80){status='Eligible to request cancellation (original value)';cls='risk-low';}
+  else if(ltvCurrent<=80){status='Likely eligible via new appraisal (appreciated value)';cls='risk-mid';}
+  else{status='Not yet eligible — keep paying down principal';cls='risk-high';}
+  const statusEl=document.getElementById('pi-status');
+  statusEl.textContent=status;
+  statusEl.className='v '+cls;
+  const targetBalance=current*0.8;
+  const equityNeeded=Math.max(0,balance-targetBalance);
+  document.getElementById('pi-equity').textContent=fmt(equityNeeded);
+  document.getElementById('pi-annual').textContent=fmt(pmi*12);
+  document.getElementById('pi-result').style.display='block';
+}
+</script>
+</body>
+</html>

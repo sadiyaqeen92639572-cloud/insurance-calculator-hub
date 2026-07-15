@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COBRA Insurance Cost Calculator — Estimate Your Monthly Premium | Insurance Calculator Hub</title>
+<meta name="description" content="Estimate your monthly COBRA health insurance premium after a job loss, including the standard 2% administration fee.">
+<link rel="canonical" href="https://insurance-calculator-hub.pages.dev/cobra-insurance-calculator/">
+<meta property="og:title" content="COBRA Insurance Cost Calculator — Estimate Your Monthly Premium | Insurance Calculator Hub">
+<meta property="og:description" content="Estimate your monthly COBRA health insurance premium after a job loss, including the standard 2% administration fee.">
+<meta property="og:url" content="https://insurance-calculator-hub.pages.dev/cobra-insurance-calculator/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:,">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"COBRA Insurance Cost Calculator — Estimate Your Monthly Premium | Insurance Calculator Hub","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://insurance-calculator-hub.pages.dev/cobra-insurance-calculator/","description":"Estimate your monthly COBRA health insurance premium after a job loss, including the standard 2% administration fee.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Insurance Calculator Hub","url":"https://insurance-calculator-hub.pages.dev","legalName":"Gesmine-Invest Limited","identifier":{"@type":"PropertyValue","propertyID":"UK Company Number","value":"14120136"},"address":{"@type":"PostalAddress","streetAddress":"Hardy House, 269 Poynders Gardens","addressLocality":"London","postalCode":"SW4 8PQ","addressCountry":"GB"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://insurance-calculator-hub.pages.dev/"},{"@type":"ListItem","position":2,"name":"COBRA Insurance Cost Calculator","item":"https://insurance-calculator-hub.pages.dev/cobra-insurance-calculator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does COBRA coverage last?","acceptedAnswer":{"@type":"Answer","text":"Typically up to 18 months after a qualifying event like job loss or reduced hours, though certain circumstances (disability, divorce, death of the covered employee) can extend it to 29 or 36 months."}},{"@type":"Question","name":"Is COBRA cheaper than an ACA marketplace plan?","acceptedAnswer":{"@type":"Answer","text":"Not usually — because COBRA requires you to pay 100% of the premium plus a 2% fee, marketplace plans with income-based subsidies are frequently cheaper for the same coverage tier. Always compare both before deciding."}},{"@type":"Question","name":"Can I decline COBRA and buy a marketplace plan instead?","acceptedAnswer":{"@type":"Answer","text":"Yes. Losing job-based coverage triggers a Special Enrollment Period for ACA marketplace plans, so you are not required to elect COBRA."}}]}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="../" class="brand"><span class="dot">🛡</span> Insurance Calculator Hub</a>
+    <nav class="top">
+      <a href="../#calculators">Calculators</a>
+      <a href="../about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">Job Transition</span><br>
+    <h1>COBRA Insurance Cost Calculator</h1>
+    <p class="lead">Estimate your monthly COBRA health insurance premium after a job loss, including the standard 2% administration fee.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="calc-card">
+    
+    <h2 style="margin-top:0;font-size:1.2rem;">Estimate Your COBRA Premium</h2>
+    <div class="calc-grid">
+      <div class="field"><label>Your Current Payroll Deduction ($/month)</label><input type="number" id="ci-employee" value="180"></div>
+      <div class="field"><label>Employer's Monthly Contribution ($/month)</label><input type="number" id="ci-employer" value="620"><div class="hint">Ask HR/payroll — this is what your employer currently pays toward your plan.</div></div>
+      <div class="field"><label>Admin Fee (%)</label><input type="number" id="ci-fee" value="2"><div class="hint">Federal law caps this at 2% for standard COBRA.</div></div>
+      <div class="field"><label>Months of Coverage Needed</label><input type="number" id="ci-months" value="6"></div>
+    </div>
+    <button class="calc-btn" onclick="calcCobra()">Calculate COBRA Cost</button>
+    <div class="result-box" id="ci-result" style="display:none;">
+      <div class="result-row hero-result"><span class="k">Estimated Monthly COBRA Premium</span><span class="v" id="ci-monthly"></span></div>
+      <div class="result-row"><span class="k">Total for Coverage Period</span><span class="v" id="ci-total"></span></div>
+      <div class="result-row"><span class="k">Increase vs. Your Current Deduction</span><span class="v" id="ci-increase"></span></div>
+    </div>
+  
+  </div>
+</div>
+
+<div class="wrap content">
+
+    <h2>How COBRA Pricing Works</h2>
+    <p>COBRA (the Consolidated Omnibus Budget Reconciliation Act) lets you keep your employer's group health plan after leaving your job — but you pay the <em>full</em> premium yourself: the portion your employer used to cover, plus your own payroll deduction, plus a standard 2% administration fee.</p>
+    <h2>Why COBRA Feels So Expensive</h2>
+    <p>Most employees only see their own payroll deduction and never realize how much their employer was contributing until they lose that subsidy. This calculator adds both amounts together, applies the admin fee, and projects the total cost over your expected coverage window so you can compare it against marketplace (ACA) plans or a spouse's employer plan.</p>
+    <div class="disclaimer">Estimate only. Actual COBRA premiums are set by your specific former employer's plan documents. Contact your HR department or plan administrator for your exact rate.</div>
+  
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>How long does COBRA coverage last?</h3><p>Typically up to 18 months after a qualifying event like job loss or reduced hours, though certain circumstances (disability, divorce, death of the covered employee) can extend it to 29 or 36 months.</p></div><div class="faq-item"><h3>Is COBRA cheaper than an ACA marketplace plan?</h3><p>Not usually — because COBRA requires you to pay 100% of the premium plus a 2% fee, marketplace plans with income-based subsidies are frequently cheaper for the same coverage tier. Always compare both before deciding.</p></div><div class="faq-item"><h3>Can I decline COBRA and buy a marketplace plan instead?</h3><p>Yes. Losing job-based coverage triggers a Special Enrollment Period for ACA marketplace plans, so you are not required to elect COBRA.</p></div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>Insurance Calculator Hub</h4>
+        <p style="font-size:.82rem;max-width:360px;color:#94a3b8;">Free, independent insurance and mortgage-insurance calculators. Estimates only — always confirm figures with a licensed agent or your policy documents before making a decision.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="../life-insurance-calculator/">Life Insurance</a>
+        <a href="../disability-insurance-calculator/">Disability Insurance</a>
+        <a href="../umbrella-insurance-calculator/">Umbrella Insurance</a>
+        <a href="../cobra-insurance-calculator/">COBRA Cost</a>
+        <a href="../title-insurance-calculator/">Title Insurance</a>
+        <a href="../pmi-removal-calculator/">PMI Removal</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="../about/">About &amp; Methodology</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© 2026 Insurance Calculator Hub. All calculators are for educational estimation purposes only and do not constitute insurance, financial, tax, or legal advice.</p>
+      <p>Insurance Calculator Hub is part of Gesmine-Invest Limited, registered UK company number 14120136, registered office address at Hardy House, 269 Poynders Gardens, London, London, United Kingdom, SW4 8PQ.</p>
+    </div>
+  </div>
+</footer>
+<script>
+function calcCobra(){
+  const employee=+document.getElementById('ci-employee').value||0;
+  const employer=+document.getElementById('ci-employer').value||0;
+  const fee=+document.getElementById('ci-fee').value||0;
+  const months=+document.getElementById('ci-months').value||0;
+  const full=employee+employer;
+  const monthly=full*(1+fee/100);
+  const total=monthly*months;
+  const increase=monthly-employee;
+  const fmt=n=>'$'+Math.round(n).toLocaleString();
+  document.getElementById('ci-monthly').textContent=fmt(monthly);
+  document.getElementById('ci-total').textContent=fmt(total);
+  document.getElementById('ci-increase').textContent='+'+fmt(increase)+'/mo';
+  document.getElementById('ci-result').style.display='block';
+}
+</script>
+</body>
+</html>
