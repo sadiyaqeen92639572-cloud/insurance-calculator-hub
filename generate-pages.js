@@ -18,19 +18,21 @@ const orgJsonLd = (pageName) => ({
   }
 });
 
-function layout({ slug, title, metaDescription, h1, badge, calcHtml, calcScript, content, faq, breadcrumbName }) {
+function layout({ slug, title, metaDescription, h1, badge, calcHtml, calcScript, content, faq, breadcrumbName, sources }) {
   const url = slug ? `${cfg.baseUrl}/${slug}/` : `${cfg.baseUrl}/`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": title,
+        "name": breadcrumbName || h1,
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web",
         "url": url,
         "description": metaDescription,
+        "dateModified": cfg.lastReviewed,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "author": orgJsonLd(title),
         "publisher": orgJsonLd(title)
       },
       slug ? {
@@ -63,9 +65,14 @@ function layout({ slug, title, metaDescription, h1, badge, calcHtml, calcScript,
 <meta property="og:description" content="${metaDescription}">
 <meta property="og:url" content="${url}">
 <meta property="og:type" content="website">
+<meta property="og:image" content="${cfg.baseUrl}/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${title}">
+<meta name="twitter:description" content="${metaDescription}">
+<meta name="twitter:image" content="${cfg.baseUrl}/assets/og-image.png">
 <link rel="stylesheet" href="${slug ? '../' : ''}assets/style.css">
-<link rel="icon" href="data:,">
+<link rel="icon" href="${slug ? '../' : ''}assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="${slug ? '../' : ''}assets/apple-touch-icon.png">
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
 <body>
@@ -94,8 +101,10 @@ function layout({ slug, title, metaDescription, h1, badge, calcHtml, calcScript,
 </div>
 
 <div class="wrap content">
+${slug ? `<p style="font-size:.78rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Written &amp; fact-checked by the Insurance Calculator Hub editorial team · Last reviewed ${cfg.lastReviewed}</p>` : ''}
 ${content}
 ${faq && faq.length ? `<h2>Frequently Asked Questions</h2>${faq.map(f => `<div class="faq-item"><h3>${f.q}</h3><p>${f.a}</p></div>`).join('')}` : ''}
+${sources && sources.length ? `<h2>Sources</h2><ul>${sources.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener noreferrer nofollow">${s.name}</a></li>`).join('')}</ul>` : ''}
 </div>
 
 <footer class="site">
@@ -199,6 +208,10 @@ function calcLife(){
     { q: 'How much life insurance do I actually need?', a: 'It depends on your income, debts, dependents, and financial goals. The DIME method (Debt + Income replacement + Mortgage + Education) gives a more accurate estimate than flat multiples of salary because it accounts for your actual obligations.' },
     { q: 'Term or whole life insurance?', a: 'Term life insurance is generally cheaper and matches temporary needs (like a mortgage or raising kids), while whole life is permanent and includes a cash-value component at a higher premium. Most people shopping for pure income replacement choose term.' },
     { q: 'Does employer-provided life insurance count as existing coverage?', a: 'Yes — include any group life insurance through your employer in the "existing coverage" field, but remember it typically ends if you leave your job, so many people supplement it with an individual policy.' }
+  ],
+  sources: [
+    { name: 'NAIC — Life Insurance Buyer\'s Guide', url: 'https://content.naic.org/consumer/life-insurance.htm' },
+    { name: 'Consumer Financial Protection Bureau — Life Insurance', url: 'https://www.consumerfinance.gov/' }
   ]
 });
 
@@ -252,6 +265,10 @@ function calcDisability(){
     { q: 'What percentage of income does disability insurance replace?', a: 'Most individual and group long-term disability policies replace 60-70% of gross income, since benefits are often received tax-free (for individually-paid premiums) and insurers want to preserve a financial incentive to return to work.' },
     { q: 'What is an elimination period?', a: 'The elimination period is the waiting time (commonly 30, 60, or 90 days) between the start of a disability and when benefit payments begin. A longer elimination period generally lowers your premium but requires more emergency savings to bridge the gap.' },
     { q: 'Does my employer\'s group disability policy cover enough?', a: 'Often not fully — many group policies replace only 50-60% of base salary and may exclude bonuses or commissions, plus benefits are usually taxable if your employer paid the premiums. An individual supplemental policy can close that gap.' }
+  ],
+  sources: [
+    { name: 'Social Security Administration — Disability Benefits', url: 'https://www.ssa.gov/benefits/disability/' },
+    { name: 'NAIC — Disability Income Insurance', url: 'https://content.naic.org/' }
   ]
 });
 
@@ -309,6 +326,9 @@ function calcUmbrella(){
     { q: 'How much does umbrella insurance cost?', a: 'Personal umbrella policies are famously inexpensive relative to the coverage — typically $150-$400/year for the first $1,000,000 of coverage, with additional millions costing less per increment.' },
     { q: 'Do I need umbrella insurance if I don\'t own a home?', a: 'Yes — renters with savings, investments, or future earning potential to protect can still be sued for amounts exceeding their auto liability limits. Net worth, not homeownership, is the key factor.' },
     { q: 'What does umbrella insurance NOT cover?', a: 'It generally excludes your own injuries or property damage (that\'s what health and property insurance are for), intentional acts, and business liability, which usually needs separate commercial coverage.' }
+  ],
+  sources: [
+    { name: 'III — Insurance Information Institute: Umbrella Insurance', url: 'https://www.iii.org/article/what-is-personal-liability-insurance' }
   ]
 });
 
@@ -363,6 +383,10 @@ function calcCobra(){
     { q: 'How long does COBRA coverage last?', a: 'Typically up to 18 months after a qualifying event like job loss or reduced hours, though certain circumstances (disability, divorce, death of the covered employee) can extend it to 29 or 36 months.' },
     { q: 'Is COBRA cheaper than an ACA marketplace plan?', a: 'Not usually — because COBRA requires you to pay 100% of the premium plus a 2% fee, marketplace plans with income-based subsidies are frequently cheaper for the same coverage tier. Always compare both before deciding.' },
     { q: 'Can I decline COBRA and buy a marketplace plan instead?', a: 'Yes. Losing job-based coverage triggers a Special Enrollment Period for ACA marketplace plans, so you are not required to elect COBRA.' }
+  ],
+  sources: [
+    { name: 'U.S. Department of Labor — COBRA Continuation Coverage', url: 'https://www.dol.gov/general/topic/health-plans/cobra' },
+    { name: 'HealthCare.gov — Marketplace vs. COBRA', url: 'https://www.healthcare.gov/unemployed/cobra-coverage/' }
   ]
 });
 
@@ -415,6 +439,10 @@ function calcTitle(){
     { q: 'Do I really need title insurance?', a: 'Lender\'s title insurance is virtually always required if you\'re financing the purchase. Owner\'s title insurance is optional but strongly recommended — it\'s the only policy that protects your own equity in the home, not just the bank\'s.' },
     { q: 'Who pays for title insurance — buyer or seller?', a: 'It varies by state and local custom. In some states the seller customarily pays for the owner\'s policy, in others the buyer pays for both policies. Check local convention or ask your closing agent.' },
     { q: 'Is title insurance a one-time cost?', a: 'Yes — unlike homeowners or life insurance, title insurance is paid once at closing and covers you for as long as you (or your heirs) hold an interest in the property.' }
+  ],
+  sources: [
+    { name: 'CFPB — What Is Title Insurance?', url: 'https://www.consumerfinance.gov/ask-cfpb/what-is-title-insurance-en-164/' },
+    { name: 'ALTA — American Land Title Association', url: 'https://www.alta.org/' }
   ]
 });
 
@@ -478,6 +506,10 @@ function calcPmi(){
     { q: 'What is the difference between PMI automatic termination and requested cancellation?', a: 'Automatic termination happens by law once your balance hits 78% of the original value, with no action needed on your part (as long as you\'re current on payments). Requested cancellation lets you remove PMI earlier, once you reach 80%, but you must proactively ask your servicer and may need to pay for a new appraisal.' },
     { q: 'Can I remove PMI faster if my home value went up?', a: 'Yes — many lenders allow early PMI removal based on a new appraisal showing you\'ve reached 80% loan-to-value using current market value, not just your original purchase price, though this typically requires a minimum 2 years of on-time payments (varies by lender).' },
     { q: 'Does PMI removal apply to FHA loans?', a: 'No — FHA loans use MIP (Mortgage Insurance Premium), which has separate rules and, on most FHA loans originated after 2013, cannot be removed without refinancing into a conventional loan.' }
+  ],
+  sources: [
+    { name: 'Consumer Financial Protection Bureau — Homeowners Protection Act / PMI', url: 'https://www.consumerfinance.gov/ask-cfpb/what-is-private-mortgage-insurance-en-135/' },
+    { name: 'U.S. Code — Homeowners Protection Act of 1998 (12 U.S.C. § 4901)', url: 'https://www.govinfo.gov/content/pkg/USCODE-2021-title12/html/USCODE-2021-title12-chap49.htm' }
   ]
 });
 
@@ -508,6 +540,8 @@ function buildIndex() {
         "@type": "WebSite",
         "name": cfg.siteName,
         "url": cfg.baseUrl + "/",
+        "dateModified": cfg.lastReviewed,
+        "author": orgJsonLd(cfg.siteName),
         "publisher": orgJsonLd(cfg.siteName)
       },
       {
@@ -534,9 +568,14 @@ function buildIndex() {
 <meta property="og:description" content="Free, independent insurance calculators for life, disability, umbrella, COBRA, title, and PMI.">
 <meta property="og:url" content="${cfg.baseUrl}/">
 <meta property="og:type" content="website">
+<meta property="og:image" content="${cfg.baseUrl}/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Insurance Calculator Hub">
+<meta name="twitter:description" content="Free, independent insurance calculators for life, disability, umbrella, COBRA, title, and PMI.">
+<meta name="twitter:image" content="${cfg.baseUrl}/assets/og-image.png">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="icon" href="data:,">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
 <body>
