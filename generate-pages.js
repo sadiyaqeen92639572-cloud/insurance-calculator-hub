@@ -78,7 +78,7 @@ function layout({ slug, title, metaDescription, h1, badge, calcHtml, calcScript,
 <body>
 <header class="site">
   <div class="wrap">
-    <a href="${slug ? '../' : './'}" class="brand"><span class="dot">🛡</span> Insurance Calculator Hub</a>
+    <a href="${slug ? '../' : './'}" class="brand"><span class="dot">🛡</span> CoverFormula</a>
     <nav class="top">
       <a href="${slug ? '../' : './'}#calculators">Calculators</a>
       <a href="${slug ? '../' : './'}about/">About</a>
@@ -101,7 +101,7 @@ function layout({ slug, title, metaDescription, h1, badge, calcHtml, calcScript,
 </div>
 
 <div class="wrap content">
-${slug ? `<p style="font-size:.78rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Written &amp; fact-checked by the Insurance Calculator Hub editorial team · Last reviewed ${cfg.lastReviewed}</p>` : ''}
+${slug ? `<p style="font-size:.78rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Written &amp; fact-checked by the CoverFormula editorial team · Last reviewed ${cfg.lastReviewed}</p>` : ''}
 ${content}
 ${formula ? `<div class="formula-box"><div class="label">Formula</div><code>${formula}</code></div>` : ''}
 ${faq && faq.length ? `<h2>Frequently Asked Questions</h2>${faq.map(f => `<div class="faq-item"><h3>${f.q}</h3><p>${f.a}</p></div>`).join('')}` : ''}
@@ -112,7 +112,7 @@ ${sources && sources.length ? `<h2>Sources</h2><ul>${sources.map(s => `<li><a hr
   <div class="wrap">
     <div class="cols">
       <div>
-        <h4>Insurance Calculator Hub</h4>
+        <h4>CoverFormula</h4>
         <p style="font-size:.82rem;max-width:360px;color:#94a3b8;">Free, independent insurance and mortgage-insurance calculators. Estimates only — always confirm figures with a licensed agent or your policy documents before making a decision.</p>
       </div>
       <div>
@@ -130,8 +130,8 @@ ${sources && sources.length ? `<h2>Sources</h2><ul>${sources.map(s => `<li><a hr
       </div>
     </div>
     <div class="legal">
-      <p>© ${new Date().getFullYear()} Insurance Calculator Hub. All calculators are for educational estimation purposes only and do not constitute insurance, financial, tax, or legal advice.</p>
-      <p>Insurance Calculator Hub is part of ${cfg.legalName}, registered UK company number ${cfg.companyNumber}, registered office address at ${cfg.registeredOffice}.</p>
+      <p>© ${new Date().getFullYear()} CoverFormula. All calculators are for educational estimation purposes only and do not constitute insurance, financial, tax, or legal advice.</p>
+      <p>CoverFormula is part of ${cfg.legalName}, registered UK company number ${cfg.companyNumber}, registered office address at ${cfg.registeredOffice}.</p>
     </div>
   </div>
 </footer>
@@ -148,7 +148,7 @@ const pages = [];
 pages.push({
   slug: 'life-insurance-calculator',
   breadcrumbName: 'Life Insurance Calculator',
-  title: 'Life Insurance Calculator — How Much Coverage Do You Need? | Insurance Calculator Hub',
+  title: 'Life Insurance Calculator — How Much Coverage Do You Need? | CoverFormula',
   metaDescription: 'Free life insurance needs calculator using the DIME method (Debt, Income, Mortgage, Education). Estimate the right coverage amount in seconds.',
   h1: 'Life Insurance Calculator',
   badge: 'DIME Method',
@@ -221,7 +221,7 @@ function calcLife(){
 pages.push({
   slug: 'disability-insurance-calculator',
   breadcrumbName: 'Disability Insurance Calculator',
-  title: 'Disability Insurance Calculator — Estimate Your Coverage Gap | Insurance Calculator Hub',
+  title: 'Disability Insurance Calculator — Estimate Your Coverage Gap | CoverFormula',
   metaDescription: 'Calculate how much disability insurance coverage you need based on your income, existing employer benefits, and target income replacement percentage.',
   h1: 'Disability Insurance Calculator',
   badge: 'Income Protection',
@@ -279,7 +279,7 @@ function calcDisability(){
 pages.push({
   slug: 'umbrella-insurance-calculator',
   breadcrumbName: 'Umbrella Insurance Calculator',
-  title: 'Umbrella Insurance Calculator — How Much Coverage Do You Need? | Insurance Calculator Hub',
+  title: 'Umbrella Insurance Calculator — How Much Coverage Do You Need? | CoverFormula',
   metaDescription: 'Estimate how much personal umbrella liability insurance you need based on your net worth and risk factors like teen drivers, pools, or rental property.',
   h1: 'Umbrella Insurance Calculator',
   badge: 'Liability Protection',
@@ -340,7 +340,7 @@ function calcUmbrella(){
 pages.push({
   slug: 'cobra-insurance-calculator',
   breadcrumbName: 'COBRA Insurance Cost Calculator',
-  title: 'COBRA Insurance Cost Calculator — Estimate Your Monthly Premium | Insurance Calculator Hub',
+  title: 'COBRA Insurance Cost Calculator — Estimate Your Monthly Premium | CoverFormula',
   metaDescription: 'Estimate your monthly COBRA health insurance premium after a job loss, including the standard 2% administration fee.',
   h1: 'COBRA Insurance Cost Calculator',
   badge: 'Job Transition',
@@ -399,7 +399,7 @@ function calcCobra(){
 pages.push({
   slug: 'title-insurance-calculator',
   breadcrumbName: 'Title Insurance Calculator',
-  title: 'Title Insurance Calculator — Estimate Owner\'s & Lender\'s Policy Cost | Insurance Calculator Hub',
+  title: 'Title Insurance Calculator — Estimate Owner\'s & Lender\'s Policy Cost | CoverFormula',
   metaDescription: 'Estimate the cost of owner\'s and lender\'s title insurance policies based on your home purchase price and loan amount.',
   h1: 'Title Insurance Calculator',
   badge: 'Home Closing Costs',
@@ -456,7 +456,7 @@ function calcTitle(){
 pages.push({
   slug: 'pmi-removal-calculator',
   breadcrumbName: 'PMI Removal Calculator',
-  title: 'PMI Removal Calculator — When Can You Cancel Private Mortgage Insurance? | Insurance Calculator Hub',
+  title: 'PMI Removal Calculator — When Can You Cancel Private Mortgage Insurance? | CoverFormula',
   metaDescription: 'Calculate your current loan-to-value ratio and find out when you can request PMI cancellation or when it automatically terminates.',
   h1: 'PMI Removal Calculator',
   badge: 'Mortgage Insurance',
@@ -568,16 +568,16 @@ function buildIndex() {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Insurance Calculator Hub — Free Life, Disability, Umbrella &amp; Mortgage Insurance Calculators</title>
+<title>CoverFormula — Free Life, Disability, Umbrella &amp; Mortgage Insurance Calculators</title>
 <meta name="description" content="Free, independent insurance calculators: life insurance needs, disability coverage gap, umbrella liability, COBRA cost, title insurance, and PMI removal.">
 <link rel="canonical" href="${cfg.baseUrl}/">
-<meta property="og:title" content="Insurance Calculator Hub">
+<meta property="og:title" content="CoverFormula">
 <meta property="og:description" content="Free, independent insurance calculators for life, disability, umbrella, COBRA, title, and PMI.">
 <meta property="og:url" content="${cfg.baseUrl}/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="${cfg.baseUrl}/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Insurance Calculator Hub">
+<meta name="twitter:title" content="CoverFormula">
 <meta name="twitter:description" content="Free, independent insurance calculators for life, disability, umbrella, COBRA, title, and PMI.">
 <meta name="twitter:image" content="${cfg.baseUrl}/assets/og-image.png">
 <link rel="stylesheet" href="assets/style.css">
@@ -588,7 +588,7 @@ function buildIndex() {
 <body>
 <header class="site">
   <div class="wrap">
-    <a href="./" class="brand"><span class="dot">🛡</span> Insurance Calculator Hub</a>
+    <a href="./" class="brand"><span class="dot">🛡</span> CoverFormula</a>
     <nav class="top">
       <a href="#calculators">Calculators</a>
       <a href="about/">About</a>
@@ -614,7 +614,7 @@ function buildIndex() {
   <div class="wrap">
     <div class="cols">
       <div>
-        <h4>Insurance Calculator Hub</h4>
+        <h4>CoverFormula</h4>
         <p style="font-size:.82rem;max-width:360px;color:#94a3b8;">Free, independent insurance and mortgage-insurance calculators. Estimates only — always confirm figures with a licensed agent or your policy documents before making a decision.</p>
       </div>
       <div>
@@ -627,8 +627,8 @@ function buildIndex() {
       </div>
     </div>
     <div class="legal">
-      <p>© ${new Date().getFullYear()} Insurance Calculator Hub. All calculators are for educational estimation purposes only and do not constitute insurance, financial, tax, or legal advice.</p>
-      <p>Insurance Calculator Hub is part of ${cfg.legalName}, registered UK company number ${cfg.companyNumber}, registered office address at ${cfg.registeredOffice}.</p>
+      <p>© ${new Date().getFullYear()} CoverFormula. All calculators are for educational estimation purposes only and do not constitute insurance, financial, tax, or legal advice.</p>
+      <p>CoverFormula is part of ${cfg.legalName}, registered UK company number ${cfg.companyNumber}, registered office address at ${cfg.registeredOffice}.</p>
     </div>
   </div>
 </footer>
@@ -640,18 +640,18 @@ function buildAbout() {
   return layout({
     slug: 'about',
     breadcrumbName: 'About',
-    title: 'About Insurance Calculator Hub — Methodology & Legal Information',
-    metaDescription: 'Learn about Insurance Calculator Hub\'s methodology, data sources, and the company behind the site.',
-    h1: 'About Insurance Calculator Hub',
+    title: 'About CoverFormula — Methodology & Legal Information',
+    metaDescription: 'Learn about CoverFormula\'s methodology, data sources, and the company behind the site.',
+    h1: 'About CoverFormula',
     badge: null,
-    calcHtml: `<p style="margin:0;">Insurance Calculator Hub provides free, browser-only calculators for life, disability, umbrella, COBRA, title, and PMI insurance. No data you enter is transmitted or stored — every calculation runs locally in your browser using JavaScript.</p>`,
+    calcHtml: `<p style="margin:0;">CoverFormula provides free, browser-only calculators for life, disability, umbrella, COBRA, title, and PMI insurance. No data you enter is transmitted or stored — every calculation runs locally in your browser using JavaScript.</p>`,
     calcScript: '',
     faq: [],
     content: `
       <h2>Our Methodology</h2>
       <p>Each calculator on this site is built around a documented, industry-standard rule of thumb — the DIME method for life insurance, standard income-replacement ratios for disability insurance, net-worth-based sizing for umbrella liability, the federal 2% COBRA administration fee cap, typical per-$1,000 title insurance rate structures, and the federal Homeowners Protection Act thresholds for PMI termination (78%/80% loan-to-value). None of these figures should replace an actual quote from a licensed professional — they exist to help you walk into that conversation already understanding the math.</p>
       <h2>Who Runs This Site</h2>
-      <p>Insurance Calculator Hub is part of Gesmine-Invest Limited, registered UK company number 14120136, registered office address at Hardy House, 269 Poynders Gardens, London, London, United Kingdom, SW4 8PQ.</p>
+      <p>CoverFormula is part of Gesmine-Invest Limited, registered UK company number 14120136, registered office address at Hardy House, 269 Poynders Gardens, London, London, United Kingdom, SW4 8PQ.</p>
     `
   });
 }
