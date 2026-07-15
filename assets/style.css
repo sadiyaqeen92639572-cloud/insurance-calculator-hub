@@ -85,3 +85,17 @@ footer.site .legal{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;fo
 .formula-box{background:#0f1b2d;border-radius:12px;padding:20px 24px;margin:20px 0;overflow-x:auto}
 .formula-box .label{font-size:1.36rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#93c5fd;margin-bottom:10px}
 .formula-box code{font-family:"SF Mono",Consolas,Monaco,monospace;font-size:.92rem;color:#e2e8f0;white-space:pre;display:block}
+
+@media(max-width:640px){
+  .badge{font-size:.68rem}
+  .field label{font-size:.72rem}
+  .field .hint{font-size:.72rem}
+  .result-row .k{font-size:.78rem}
+  button.calc-btn{font-size:.85rem}
+  .hub-card p{font-size:.82rem}
+  footer.site h4{font-size:.72rem}
+  footer.site a{font-size:.82rem}
+  footer.site .legal{font-size:.72rem}
+  .disclaimer{font-size:.82rem}
+  .formula-box .label{font-size:.68rem}
+}
