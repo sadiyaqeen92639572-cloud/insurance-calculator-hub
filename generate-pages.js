@@ -18,7 +18,7 @@ const orgJsonLd = (pageName) => ({
   }
 });
 
-function layout({ slug, title, metaDescription, h1, badge, calcHtml, calcScript, content, faq, breadcrumbName, sources }) {
+function layout({ slug, title, metaDescription, h1, badge, calcHtml, calcScript, content, faq, breadcrumbName, sources, formula }) {
   const url = slug ? `${cfg.baseUrl}/${slug}/` : `${cfg.baseUrl}/`;
   const jsonLd = {
     "@context": "https://schema.org",
@@ -103,6 +103,7 @@ function layout({ slug, title, metaDescription, h1, badge, calcHtml, calcScript,
 <div class="wrap content">
 ${slug ? `<p style="font-size:.78rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Written &amp; fact-checked by the Insurance Calculator Hub editorial team · Last reviewed ${cfg.lastReviewed}</p>` : ''}
 ${content}
+${formula ? `<div class="formula-box"><div class="label">Formula</div><code>${formula}</code></div>` : ''}
 ${faq && faq.length ? `<h2>Frequently Asked Questions</h2>${faq.map(f => `<div class="faq-item"><h3>${f.q}</h3><p>${f.a}</p></div>`).join('')}` : ''}
 ${sources && sources.length ? `<h2>Sources</h2><ul>${sources.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener noreferrer nofollow">${s.name}</a></li>`).join('')}</ul>` : ''}
 </div>
@@ -204,6 +205,7 @@ function calcLife(){
     <p>The tool subtracts any existing life insurance and liquid savings from the total, giving you the net additional coverage to shop for.</p>
     <div class="disclaimer">This calculator provides an educational estimate only. Insurance needs vary by family, health status, and state. Speak with a licensed life insurance agent or financial advisor before purchasing a policy.</div>
   `,
+  formula: 'Coverage Needed = (Annual Income × Years to Replace) + Other Debt + Mortgage Balance + Education Costs − Existing Coverage',
   faq: [
     { q: 'How much life insurance do I actually need?', a: 'It depends on your income, debts, dependents, and financial goals. The DIME method (Debt + Income replacement + Mortgage + Education) gives a more accurate estimate than flat multiples of salary because it accounts for your actual obligations.' },
     { q: 'Term or whole life insurance?', a: 'Term life insurance is generally cheaper and matches temporary needs (like a mortgage or raising kids), while whole life is permanent and includes a cash-value component at a higher premium. Most people shopping for pure income replacement choose term.' },
@@ -261,6 +263,7 @@ function calcDisability(){
     <p>Insurers typically cap individual disability policies at 60-70% of gross income (to preserve the incentive to return to work). This tool multiplies your gross monthly income by your target replacement percentage, then subtracts any group/employer coverage you already have to show the remaining gap an individual policy should fill. It also estimates the savings you'd need on hand to bridge the "elimination period" — the waiting window before benefit payments begin.</p>
     <div class="disclaimer">Estimate only. Actual underwriting, benefit caps, and elimination periods vary by insurer, occupation class, and state. Consult a licensed disability insurance broker for an accurate quote.</div>
   `,
+  formula: 'Coverage Gap = (Gross Monthly Income × Target Replacement %) − Existing Group/Employer Benefit',
   faq: [
     { q: 'What percentage of income does disability insurance replace?', a: 'Most individual and group long-term disability policies replace 60-70% of gross income, since benefits are often received tax-free (for individually-paid premiums) and insurers want to preserve a financial incentive to return to work.' },
     { q: 'What is an elimination period?', a: 'The elimination period is the waiting time (commonly 30, 60, or 90 days) between the start of a disability and when benefit payments begin. A longer elimination period generally lowers your premium but requires more emergency savings to bridge the gap.' },
@@ -322,6 +325,7 @@ function calcUmbrella(){
     <p>The standard industry guideline is to carry umbrella coverage equal to at least your total net worth, rounded up to the next $1,000,000 (most policies are sold in $1M increments), with a $1,000,000 minimum. Add coverage for each additional high-risk factor in your household — a teen driver, a swimming pool, a trampoline, a rental property, or a dog breed with bite-claim history all statistically raise your liability exposure.</p>
     <div class="disclaimer">Estimate only. Umbrella insurers typically require minimum underlying auto/home liability limits (often $250k-$300k) before issuing a policy. Confirm eligibility and pricing with a licensed insurance agent.</div>
   `,
+  formula: 'Recommended Coverage = max($1,000,000, roundUp(Net Worth, $1,000,000)) + ($1,000,000 × Number of High-Risk Factors), where Net Worth = Total Assets − Total Liabilities',
   faq: [
     { q: 'How much does umbrella insurance cost?', a: 'Personal umbrella policies are famously inexpensive relative to the coverage — typically $150-$400/year for the first $1,000,000 of coverage, with additional millions costing less per increment.' },
     { q: 'Do I need umbrella insurance if I don\'t own a home?', a: 'Yes — renters with savings, investments, or future earning potential to protect can still be sued for amounts exceeding their auto liability limits. Net worth, not homeownership, is the key factor.' },
@@ -379,6 +383,7 @@ function calcCobra(){
     <p>Most employees only see their own payroll deduction and never realize how much their employer was contributing until they lose that subsidy. This calculator adds both amounts together, applies the admin fee, and projects the total cost over your expected coverage window so you can compare it against marketplace (ACA) plans or a spouse's employer plan.</p>
     <div class="disclaimer">Estimate only. Actual COBRA premiums are set by your specific former employer's plan documents. Contact your HR department or plan administrator for your exact rate.</div>
   `,
+  formula: 'Monthly COBRA Premium = (Employee Payroll Deduction + Employer Contribution) × (1 + Admin Fee %)',
   faq: [
     { q: 'How long does COBRA coverage last?', a: 'Typically up to 18 months after a qualifying event like job loss or reduced hours, though certain circumstances (disability, divorce, death of the covered employee) can extend it to 29 or 36 months.' },
     { q: 'Is COBRA cheaper than an ACA marketplace plan?', a: 'Not usually — because COBRA requires you to pay 100% of the premium plus a 2% fee, marketplace plans with income-based subsidies are frequently cheaper for the same coverage tier. Always compare both before deciding.' },
@@ -435,6 +440,7 @@ function calcTitle(){
     <p>This calculator uses a simplified national-average rate (roughly $5 per $1,000 of purchase price for the owner's policy, and $2.50 per $1,000 of loan amount for the lender's policy) — actual rates vary significantly by state, since some states regulate title insurance rates directly and others allow competitive pricing.</p>
     <div class="disclaimer">Estimate only. Title insurance rates are state-regulated and vary widely — get an itemized quote from a title company or your closing attorney for an exact figure.</div>
   `,
+  formula: 'Owner\'s Policy = Purchase Price × 0.5% · Lender\'s Policy = Loan Amount × 0.25% · Total = Owner\'s Policy + Lender\'s Policy',
   faq: [
     { q: 'Do I really need title insurance?', a: 'Lender\'s title insurance is virtually always required if you\'re financing the purchase. Owner\'s title insurance is optional but strongly recommended — it\'s the only policy that protects your own equity in the home, not just the bank\'s.' },
     { q: 'Who pays for title insurance — buyer or seller?', a: 'It varies by state and local custom. In some states the seller customarily pays for the owner\'s policy, in others the buyer pays for both policies. Check local convention or ask your closing agent.' },
@@ -502,6 +508,7 @@ function calcPmi(){
     <p>It computes your loan-to-value ratio two ways: against your original purchase price (the 78%/80% federal thresholds) and against your home's current estimated value (relevant if you're pursuing early removal via appraisal). It also shows how much annual PMI you're paying if you don't act, as motivation to check your eligibility regularly.</p>
     <div class="disclaimer">Estimate only. PMI removal policy and appraisal requirements vary by lender and loan type (conventional, FHA, etc. — note FHA loans use MIP, not PMI, and have different removal rules). Contact your loan servicer to confirm your exact eligibility.</div>
   `,
+  formula: 'LTV = (Loan Balance ÷ Home Value) × 100. Automatic termination at LTV ≤ 78% of original value; eligible to request cancellation at LTV ≤ 80% of original value.',
   faq: [
     { q: 'What is the difference between PMI automatic termination and requested cancellation?', a: 'Automatic termination happens by law once your balance hits 78% of the original value, with no action needed on your part (as long as you\'re current on payments). Requested cancellation lets you remove PMI earlier, once you reach 80%, but you must proactively ask your servicer and may need to pay for a new appraisal.' },
     { q: 'Can I remove PMI faster if my home value went up?', a: 'Yes — many lenders allow early PMI removal based on a new appraisal showing you\'ve reached 80% loan-to-value using current market value, not just your original purchase price, though this typically requires a minimum 2 years of on-time payments (varies by lender).' },
