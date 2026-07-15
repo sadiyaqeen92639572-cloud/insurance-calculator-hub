@@ -57,6 +57,7 @@ function layout({ slug, title, metaDescription, h1, badge, calcHtml, calcScript,
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="google-site-verification" content="lVhyIf5vqU6t8al6L3m0eR_8A4l2OXZDoX0sfm28y6k" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${title}</title>
 <meta name="description" content="${metaDescription}">
@@ -567,6 +568,7 @@ function buildIndex() {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="google-site-verification" content="lVhyIf5vqU6t8al6L3m0eR_8A4l2OXZDoX0sfm28y6k" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CoverFormula — Free Life, Disability, Umbrella &amp; Mortgage Insurance Calculators</title>
 <meta name="description" content="Free, independent insurance calculators: life insurance needs, disability coverage gap, umbrella liability, COBRA cost, title insurance, and PMI removal.">
