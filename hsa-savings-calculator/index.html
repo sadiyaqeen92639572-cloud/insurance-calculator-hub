@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="lVhyIf5vqU6t8al6L3m0eR_8A4l2OXZDoX0sfm28y6k" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSA Savings Calculator — Project Your Balance | CoverFormula</title>
+<meta name="description" content="Project your HSA balance growth using 2026 IRS contribution limits, with self-only/family coverage and age-55+ catch-up contributions.">
+<link rel="canonical" href="https://coverformula.com/hsa-savings-calculator/">
+<meta property="og:title" content="HSA Savings Calculator — Project Your Balance | CoverFormula">
+<meta property="og:description" content="Project your HSA balance growth using 2026 IRS contribution limits, with self-only/family coverage and age-55+ catch-up contributions.">
+<meta property="og:url" content="https://coverformula.com/hsa-savings-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://coverformula.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HSA Savings Calculator — Project Your Balance | CoverFormula">
+<meta name="twitter:description" content="Project your HSA balance growth using 2026 IRS contribution limits, with self-only/family coverage and age-55+ catch-up contributions.">
+<meta name="twitter:image" content="https://coverformula.com/assets/og-image.png">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"HSA Savings Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://coverformula.com/hsa-savings-calculator/","description":"Project your HSA balance growth using 2026 IRS contribution limits, with self-only/family coverage and age-55+ catch-up contributions.","dateModified":"2026-07-29","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"CoverFormula","url":"https://coverformula.com","legalName":"Gesmine-Invest Limited","identifier":{"@type":"PropertyValue","propertyID":"UK Company Number","value":"14120136"},"address":{"@type":"PostalAddress","streetAddress":"Hardy House, 269 Poynders Gardens","addressLocality":"London","postalCode":"SW4 8PQ","addressCountry":"GB"}},"publisher":{"@type":"Organization","name":"CoverFormula","url":"https://coverformula.com","legalName":"Gesmine-Invest Limited","identifier":{"@type":"PropertyValue","propertyID":"UK Company Number","value":"14120136"},"address":{"@type":"PostalAddress","streetAddress":"Hardy House, 269 Poynders Gardens","addressLocality":"London","postalCode":"SW4 8PQ","addressCountry":"GB"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://coverformula.com/"},{"@type":"ListItem","position":2,"name":"HSA Savings Calculator","item":"https://coverformula.com/hsa-savings-calculator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the 2026 HSA contribution limits?","acceptedAnswer":{"@type":"Answer","text":"For 2026, the IRS limit is $4,400 for self-only HDHP coverage and $8,750 for family coverage. Those age 55 or older can contribute an additional $1,000 catch-up, for totals of $5,400 (self-only) and $9,750 (family)."}},{"@type":"Question","name":"What makes an HSA different from an FSA?","acceptedAnswer":{"@type":"Answer","text":"Unlike a Flexible Spending Account, HSA balances roll over year to year with no use-it-or-lose-it deadline, the account is yours even if you change jobs, and after age 65 you can withdraw funds for any purpose (paying regular income tax, but no penalty) — making it usable as a supplemental retirement account."}},{"@type":"Question","name":"Why is an HSA called triple tax-advantaged?","acceptedAnswer":{"@type":"Answer","text":"Contributions are tax-deductible (or pre-tax through payroll), the balance grows tax-free, and withdrawals for qualified medical expenses are also tax-free — no other common account offers all three advantages at once."}}]},{"@type":"HowTo","name":"How to Project Your HSA Balance","step":[{"@type":"HowToStep","name":"Enter your current balance","text":"Enter your current HSA balance."},{"@type":"HowToStep","name":"Select coverage type","text":"Choose self-only or family HDHP coverage to see your 2026 contribution limit."},{"@type":"HowToStep","name":"Enter your annual contribution","text":"Enter how much you plan to contribute per year, and check the 55+ catch-up box if it applies."},{"@type":"HowToStep","name":"Set your time horizon and return rate","text":"Enter years until you plan to use the funds and your expected annual return."},{"@type":"HowToStep","name":"Calculate your projection","text":"Click Calculate to see your projected balance, total contributions, and total growth."}]}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="../" class="brand"><span class="dot">🛡</span> CoverFormula</a>
+    <nav class="top">
+      <a href="../#calculators">Calculators</a>
+      <a href="../guides/">Guides</a>
+      <a href="../about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">Health Savings</span><br>
+    <h1>HSA Savings Calculator</h1>
+    <p class="lead">Project your HSA balance growth using 2026 IRS contribution limits.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="calc-card">
+    <h2 style="margin-top:0;font-size:1.2rem;">Project Your HSA Balance</h2>
+    <div class="calc-grid">
+      <div class="field"><label>Current HSA Balance ($)</label><input type="number" id="hsa-balance" value="8000"></div>
+      <div class="field"><label>Coverage Type</label>
+        <select id="hsa-coverage">
+          <option value="self">Self-only (2026 limit: $4,400)</option>
+          <option value="family">Family (2026 limit: $8,750)</option>
+        </select>
+      </div>
+      <div class="field"><label>Annual Contribution ($)</label><input type="number" id="hsa-contribution" value="4400"><div class="hint">Your contribution plus any employer contribution combined.</div></div>
+      <div class="field"><label>Age 55+ Catch-Up?</label>
+        <select id="hsa-catchup">
+          <option value="no">No</option>
+          <option value="yes">Yes (+$1,000/year)</option>
+        </select>
+      </div>
+      <div class="field"><label>Years Until You'll Use the Funds</label><input type="number" id="hsa-years" value="20"></div>
+      <div class="field"><label>Expected Annual Return (%)</label><input type="number" id="hsa-return" value="6" step="0.1"><div class="hint">If invested (not just held as cash) — many HSA providers offer investment options above a balance threshold.</div></div>
+    </div>
+    <button class="calc-btn" onclick="calcHsa()">Calculate Projection</button>
+    <div class="result-box" id="hsa-result" style="display:none;">
+      <div class="result-row hero-result"><span class="k">Projected HSA Balance</span><span class="v" id="hsa-total"></span></div>
+      <div class="result-row"><span class="k">Total Contributions</span><span class="v" id="hsa-contrib-total"></span></div>
+      <div class="result-row"><span class="k">Total Growth</span><span class="v" id="hsa-growth"></span></div>
+      <div class="result-row" id="hsa-limit-row" style="display:none;"><span class="k">Note</span><span class="v" id="hsa-limit-note" style="font-size:.85rem;font-weight:400;"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap content">
+<p style="font-size:.78rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Written &amp; fact-checked by the CoverFormula editorial team · Last reviewed 2026-07-29</p>
+
+<h2>Why an HSA Is Different</h2>
+<p>A Health Savings Account is available to anyone enrolled in a qualifying high-deductible health plan (HDHP). Unlike a Flexible Spending Account, HSA balances roll over indefinitely — there's no year-end deadline to spend them — and the account belongs to you, not your employer. Contributions are tax-deductible (or pre-tax via payroll), growth is tax-free, and withdrawals for qualified medical expenses are tax-free too, which is why it's often called "triple tax-advantaged."</p>
+<h2>How This Calculator Works</h2>
+<p>It projects your current balance plus future annual contributions forward using compound growth, based on your expected annual return. It also checks your entered contribution against the 2026 IRS limit for your coverage type (plus the $1,000 catch-up if you're 55 or older) and flags it if you've entered more than the allowed limit.</p>
+<div class="disclaimer">Estimate only, not tax or investment advice. Actual returns depend on how your HSA funds are invested; not all HSA providers offer investment options, and some require a minimum cash balance before investing is available. Confirm current-year contribution limits with your HSA administrator or IRS Publication 969.</div>
+
+<div class="formula-box"><div class="label">Formula</div><code>Projected Balance = Current Balance × (1+r)^n + Annual Contribution × (((1+r)^n − 1) ÷ r), where r = annual return, n = years</code></div>
+<h2>How to Use This Calculator</h2><ol><li>Enter your current HSA balance and select your coverage type (self-only or family).</li><li>Enter your planned annual contribution, and flag the 55+ catch-up if it applies.</li><li>Enter your time horizon and expected annual return.</li><li>Click Calculate to see your projected balance, total contributions, and total growth.</li></ol>
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>What are the 2026 HSA contribution limits?</h3><p>For 2026, the IRS limit is $4,400 for self-only HDHP coverage and $8,750 for family coverage. Those age 55 or older can contribute an additional $1,000 catch-up, for totals of $5,400 (self-only) and $9,750 (family).</p></div><div class="faq-item"><h3>What makes an HSA different from an FSA?</h3><p>Unlike a Flexible Spending Account, HSA balances roll over year to year with no use-it-or-lose-it deadline, the account is yours even if you change jobs, and after age 65 you can withdraw funds for any purpose (paying regular income tax, but no penalty) — making it usable as a supplemental retirement account.</p></div><div class="faq-item"><h3>Why is an HSA called triple tax-advantaged?</h3><p>Contributions are tax-deductible (or pre-tax through payroll), the balance grows tax-free, and withdrawals for qualified medical expenses are also tax-free — no other common account offers all three advantages at once.</p></div>
+<h2>Sources</h2><ul><li><a href="https://www.irs.gov/publications/p969" target="_blank" rel="noopener noreferrer nofollow">IRS Publication 969 — Health Savings Accounts</a></li></ul>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>CoverFormula</h4>
+        <p style="font-size:.82rem;max-width:360px;color:#94a3b8;">Free, independent insurance and mortgage-insurance calculators. Estimates only — always confirm figures with a licensed agent or your policy documents before making a decision.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="../life-insurance-calculator/">Life Insurance</a>
+        <a href="../disability-insurance-calculator/">Disability Insurance</a>
+        <a href="../umbrella-insurance-calculator/">Umbrella Insurance</a>
+        <a href="../cobra-insurance-calculator/">COBRA Cost</a>
+        <a href="../title-insurance-calculator/">Title Insurance</a>
+        <a href="../pmi-removal-calculator/">PMI Removal</a>
+        <a href="../refinance-break-even-calculator/">Refinance Break-Even</a>
+        <a href="../hsa-savings-calculator/">HSA Savings</a>
+        <a href="../auto-insurance-premium-estimator/">Auto Insurance Estimator</a>
+        <a href="../social-security-estimate-calculator/">Social Security Estimate</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="../guides/">Guides</a>
+        <a href="../about/">About &amp; Methodology</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© 2026 CoverFormula. All calculators are for educational estimation purposes only and do not constitute insurance, financial, tax, or legal advice.</p>
+      <p>CoverFormula is part of Gesmine-Invest Limited, registered UK company number 14120136, registered office address at Hardy House, 269 Poynders Gardens, London, London, United Kingdom, SW4 8PQ.</p>
+    </div>
+  </div>
+</footer>
+<script>
+function calcHsa(){
+  const balance=+document.getElementById('hsa-balance').value||0;
+  const coverage=document.getElementById('hsa-coverage').value;
+  const contribution=+document.getElementById('hsa-contribution').value||0;
+  const catchup=document.getElementById('hsa-catchup').value==='yes';
+  const years=+document.getElementById('hsa-years').value||0;
+  const returnRate=(+document.getElementById('hsa-return').value||0)/100;
+  const limits={self:4400, family:8750};
+  const limit=limits[coverage]+(catchup?1000:0);
+  const fmt=n=>'$'+Math.round(n).toLocaleString();
+
+  const r=returnRate;
+  const n=years;
+  let futureBalance, futureContrib;
+  if(r>0){
+    futureBalance=balance*Math.pow(1+r,n);
+    futureContrib=contribution*((Math.pow(1+r,n)-1)/r);
+  } else {
+    futureBalance=balance;
+    futureContrib=contribution*n;
+  }
+  const total=futureBalance+futureContrib;
+  const totalContributed=contribution*n;
+  const growth=total-balance-totalContributed;
+
+  document.getElementById('hsa-total').textContent=fmt(total);
+  document.getElementById('hsa-contrib-total').textContent=fmt(totalContributed)+' (over '+n+' yrs)';
+  document.getElementById('hsa-growth').textContent=fmt(growth);
+
+  const noteRow=document.getElementById('hsa-limit-row');
+  if(contribution>limit){
+    document.getElementById('hsa-limit-note').textContent='Your entered contribution ($'+contribution.toLocaleString()+') exceeds the 2026 IRS limit of $'+limit.toLocaleString()+' for your coverage type — excess HSA contributions are subject to a 6% excise tax if not corrected.';
+    noteRow.style.display='flex';
+  } else {
+    noteRow.style.display='none';
+  }
+  document.getElementById('hsa-result').style.display='block';
+}
+</script>
+</body>
+</html>

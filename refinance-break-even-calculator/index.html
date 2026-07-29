@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="lVhyIf5vqU6t8al6L3m0eR_8A4l2OXZDoX0sfm28y6k" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage Refinance Break-Even Calculator | CoverFormula</title>
+<meta name="description" content="Calculate how many months it takes for your monthly savings to cover your refinance closing costs, and whether refinancing is worth it.">
+<link rel="canonical" href="https://coverformula.com/refinance-break-even-calculator/">
+<meta property="og:title" content="Mortgage Refinance Break-Even Calculator | CoverFormula">
+<meta property="og:description" content="Calculate how many months it takes for your monthly savings to cover your refinance closing costs, and whether refinancing is worth it.">
+<meta property="og:url" content="https://coverformula.com/refinance-break-even-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://coverformula.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mortgage Refinance Break-Even Calculator | CoverFormula">
+<meta name="twitter:description" content="Calculate how many months it takes for your monthly savings to cover your refinance closing costs, and whether refinancing is worth it.">
+<meta name="twitter:image" content="https://coverformula.com/assets/og-image.png">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Mortgage Refinance Break-Even Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://coverformula.com/refinance-break-even-calculator/","description":"Calculate how many months it takes for your monthly savings to cover your refinance closing costs, and whether refinancing is worth it.","dateModified":"2026-07-29","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"CoverFormula","url":"https://coverformula.com","legalName":"Gesmine-Invest Limited","identifier":{"@type":"PropertyValue","propertyID":"UK Company Number","value":"14120136"},"address":{"@type":"PostalAddress","streetAddress":"Hardy House, 269 Poynders Gardens","addressLocality":"London","postalCode":"SW4 8PQ","addressCountry":"GB"}},"publisher":{"@type":"Organization","name":"CoverFormula","url":"https://coverformula.com","legalName":"Gesmine-Invest Limited","identifier":{"@type":"PropertyValue","propertyID":"UK Company Number","value":"14120136"},"address":{"@type":"PostalAddress","streetAddress":"Hardy House, 269 Poynders Gardens","addressLocality":"London","postalCode":"SW4 8PQ","addressCountry":"GB"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://coverformula.com/"},{"@type":"ListItem","position":2,"name":"Mortgage Refinance Break-Even Calculator","item":"https://coverformula.com/refinance-break-even-calculator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good break-even period for refinancing?","acceptedAnswer":{"@type":"Answer","text":"Most guidance suggests refinancing is worth it if you'll stay in the home (or keep the loan) longer than the break-even period. A break-even under 2-3 years is generally considered favorable; anything beyond 5 years deserves more scrutiny, especially if you might move or refinance again before then."}},{"@type":"Question","name":"Does the break-even calculation include the full picture?","acceptedAnswer":{"@type":"Answer","text":"This simple break-even method compares monthly payment savings to upfront closing costs, but it doesn't account for resetting your amortization clock (paying more interest again in the early years of a new loan) or changes in loan term. A cash-flow break-even is a useful first filter, not the only factor."}},{"@type":"Question","name":"Can I roll closing costs into the new loan instead of paying upfront?","acceptedAnswer":{"@type":"Answer","text":"Yes, many lenders allow a no-closing-cost refinance where costs are rolled into the loan balance or offset with a slightly higher interest rate. This changes the math — you break even immediately on cash flow, but pay for the closing costs slowly through a higher rate over the life of the loan."}}]},{"@type":"HowTo","name":"How to Calculate Your Refinance Break-Even Point","step":[{"@type":"HowToStep","name":"Enter your current loan balance","text":"Enter your current mortgage principal balance and current monthly principal & interest payment."},{"@type":"HowToStep","name":"Enter your new loan terms","text":"Enter the new interest rate and new loan term you're being offered."},{"@type":"HowToStep","name":"Enter your closing costs","text":"Enter the total closing costs for the refinance."},{"@type":"HowToStep","name":"Calculate your break-even","text":"Click Calculate to see your new payment, monthly savings, and break-even period in months."}]}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="../" class="brand"><span class="dot">🛡</span> CoverFormula</a>
+    <nav class="top">
+      <a href="../#calculators">Calculators</a>
+      <a href="../guides/">Guides</a>
+      <a href="../about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">Mortgage</span><br>
+    <h1>Mortgage Refinance Break-Even Calculator</h1>
+    <p class="lead">Find out how many months it takes for your monthly savings to cover your refinance closing costs.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="calc-card">
+    <h2 style="margin-top:0;font-size:1.2rem;">Estimate Your Break-Even Point</h2>
+    <div class="calc-grid">
+      <div class="field"><label>Current Loan Balance ($)</label><input type="number" id="rf-balance" value="320000"></div>
+      <div class="field"><label>Current Monthly Payment (P&amp;I) ($)</label><input type="number" id="rf-current-payment" value="1918"><div class="hint">Principal and interest only, from your current statement.</div></div>
+      <div class="field"><label>New Interest Rate (%)</label><input type="number" id="rf-new-rate" value="5.75" step="0.01"></div>
+      <div class="field"><label>New Loan Term (years)</label><input type="number" id="rf-new-term" value="30"></div>
+      <div class="field"><label>Refinance Closing Costs ($)</label><input type="number" id="rf-costs" value="6000"><div class="hint">Lender fees, appraisal, title insurance, points — ask for a full Loan Estimate.</div></div>
+    </div>
+    <button class="calc-btn" onclick="calcRefi()">Calculate Break-Even</button>
+    <div class="result-box" id="rf-result" style="display:none;">
+      <div class="result-row hero-result"><span class="k">Break-Even Period</span><span class="v" id="rf-breakeven"></span></div>
+      <div class="result-row"><span class="k">New Monthly Payment</span><span class="v" id="rf-newpayment"></span></div>
+      <div class="result-row"><span class="k">Monthly Savings</span><span class="v" id="rf-savings"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap content">
+<p style="font-size:.78rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Written &amp; fact-checked by the CoverFormula editorial team · Last reviewed 2026-07-29</p>
+
+<h2>What Break-Even Actually Means</h2>
+<p>Refinancing replaces your current mortgage with a new one — usually at a lower rate, but always with new closing costs (appraisal, lender fees, title insurance, sometimes points). The break-even point is how many months of monthly payment savings it takes to recover those upfront costs. If you sell the home or refinance again before reaching break-even, you lose money on the deal.</p>
+<h2>How This Calculator Works</h2>
+<p>It computes your new monthly principal &amp; interest payment using standard mortgage amortization on your current balance at the new rate and term, subtracts it from your current payment to get the monthly savings, then divides your closing costs by that monthly savings to get the break-even month count.</p>
+<div class="disclaimer">Estimate only. This simple break-even method doesn't account for resetting your amortization schedule or changes in total interest paid over the life of the loan — for a full cost-benefit comparison, ask your lender for an amortization schedule on both loans.</div>
+
+<div class="formula-box"><div class="label">Formula</div><code>New Payment = Balance × r × (1+r)^n ÷ ((1+r)^n − 1), where r = monthly rate, n = new term in months
+Monthly Savings = Current Payment − New Payment
+Break-Even (months) = Closing Costs ÷ Monthly Savings</code></div>
+<h2>How to Use This Calculator</h2><ol><li>Enter your current loan balance and current monthly principal &amp; interest payment.</li><li>Enter the new interest rate and loan term you're being offered.</li><li>Enter the total refinance closing costs.</li><li>Click Calculate to see your new payment, monthly savings, and break-even period.</li></ol>
+<h2>Frequently Asked Questions</h2><div class="faq-item"><h3>What is a good break-even period for refinancing?</h3><p>Most guidance suggests refinancing is worth it if you'll stay in the home (or keep the loan) longer than the break-even period. A break-even under 2-3 years is generally considered favorable; anything beyond 5 years deserves more scrutiny, especially if you might move or refinance again before then.</p></div><div class="faq-item"><h3>Does the break-even calculation include the full picture?</h3><p>This simple break-even method compares monthly payment savings to upfront closing costs, but it doesn't account for resetting your amortization clock (paying more interest again in the early years of a new loan) or changes in loan term. A cash-flow break-even is a useful first filter, not the only factor.</p></div><div class="faq-item"><h3>Can I roll closing costs into the new loan instead of paying upfront?</h3><p>Yes, many lenders allow a no-closing-cost refinance where costs are rolled into the loan balance or offset with a slightly higher interest rate. This changes the math — you break even immediately on cash flow, but pay for the closing costs slowly through a higher rate over the life of the loan.</p></div>
+<h2>Sources</h2><ul><li><a href="https://www.consumerfinance.gov/owning-a-home/explore-rates/" target="_blank" rel="noopener noreferrer nofollow">Consumer Financial Protection Bureau — Explore Mortgage Rates &amp; Refinancing</a></li></ul>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>CoverFormula</h4>
+        <p style="font-size:.82rem;max-width:360px;color:#94a3b8;">Free, independent insurance and mortgage-insurance calculators. Estimates only — always confirm figures with a licensed agent or your policy documents before making a decision.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="../life-insurance-calculator/">Life Insurance</a>
+        <a href="../disability-insurance-calculator/">Disability Insurance</a>
+        <a href="../umbrella-insurance-calculator/">Umbrella Insurance</a>
+        <a href="../cobra-insurance-calculator/">COBRA Cost</a>
+        <a href="../title-insurance-calculator/">Title Insurance</a>
+        <a href="../pmi-removal-calculator/">PMI Removal</a>
+        <a href="../refinance-break-even-calculator/">Refinance Break-Even</a>
+        <a href="../hsa-savings-calculator/">HSA Savings</a>
+        <a href="../auto-insurance-premium-estimator/">Auto Insurance Estimator</a>
+        <a href="../social-security-estimate-calculator/">Social Security Estimate</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="../guides/">Guides</a>
+        <a href="../about/">About &amp; Methodology</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© 2026 CoverFormula. All calculators are for educational estimation purposes only and do not constitute insurance, financial, tax, or legal advice.</p>
+      <p>CoverFormula is part of Gesmine-Invest Limited, registered UK company number 14120136, registered office address at Hardy House, 269 Poynders Gardens, London, London, United Kingdom, SW4 8PQ.</p>
+    </div>
+  </div>
+</footer>
+<script>
+function calcRefi(){
+  const balance=+document.getElementById('rf-balance').value||0;
+  const currentPayment=+document.getElementById('rf-current-payment').value||0;
+  const rate=+document.getElementById('rf-new-rate').value||0;
+  const term=+document.getElementById('rf-new-term').value||0;
+  const costs=+document.getElementById('rf-costs').value||0;
+  const r=rate/100/12;
+  const n=term*12;
+  const newPayment=r>0?(balance*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1):balance/n;
+  const savings=currentPayment-newPayment;
+  const fmt=n=>'$'+Math.round(n).toLocaleString();
+  document.getElementById('rf-newpayment').textContent=fmt(newPayment);
+  document.getElementById('rf-savings').textContent=(savings>=0?'+':'')+fmt(savings)+'/mo';
+  const breakevenEl=document.getElementById('rf-breakeven');
+  if(savings<=0){
+    breakevenEl.textContent='No monthly savings — refinance costs more per month';
+  } else {
+    const months=Math.ceil(costs/savings);
+    breakevenEl.textContent=months+' months ('+(months/12).toFixed(1)+' years)';
+  }
+  document.getElementById('rf-result').style.display='block';
+}
+</script>
+</body>
+</html>
