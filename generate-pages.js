@@ -330,7 +330,9 @@ function calcUmbrella(){
   faq: [
     { q: 'How much does umbrella insurance cost?', a: 'Personal umbrella policies are famously inexpensive relative to the coverage — typically $150-$400/year for the first $1,000,000 of coverage, with additional millions costing less per increment.' },
     { q: 'Do I need umbrella insurance if I don\'t own a home?', a: 'Yes — renters with savings, investments, or future earning potential to protect can still be sued for amounts exceeding their auto liability limits. Net worth, not homeownership, is the key factor.' },
-    { q: 'What does umbrella insurance NOT cover?', a: 'It generally excludes your own injuries or property damage (that\'s what health and property insurance are for), intentional acts, and business liability, which usually needs separate commercial coverage.' }
+    { q: 'What does umbrella insurance NOT cover?', a: 'It generally excludes your own injuries or property damage (that\'s what health and property insurance are for), intentional acts, and business liability, which usually needs separate commercial coverage.' },
+    { q: 'How much umbrella insurance should I have or carry?', a: 'The standard guideline is coverage equal to your total net worth, rounded up to the next $1,000,000, with a $1,000,000 minimum — plus $1,000,000 more per major risk factor like a teen driver, pool, or rental property. Use the calculator above with your own numbers for a specific figure.' },
+    { q: 'How much personal umbrella liability insurance do I need?', a: 'Size it to your net worth (assets minus liabilities), not just your income — an umbrella policy exists to protect assets a lawsuit judgment could otherwise seize, so anything below your net worth leaves a gap.' }
   ],
   sources: [
     { name: 'III — Insurance Information Institute: Umbrella Insurance', url: 'https://www.iii.org/article/what-is-personal-liability-insurance' }
@@ -382,13 +384,19 @@ function calcCobra(){
     <p>COBRA (the Consolidated Omnibus Budget Reconciliation Act) lets you keep your employer's group health plan after leaving your job — but you pay the <em>full</em> premium yourself: the portion your employer used to cover, plus your own payroll deduction, plus a standard 2% administration fee.</p>
     <h2>Why COBRA Feels So Expensive</h2>
     <p>Most employees only see their own payroll deduction and never realize how much their employer was contributing until they lose that subsidy. This calculator adds both amounts together, applies the admin fee, and projects the total cost over your expected coverage window so you can compare it against marketplace (ACA) plans or a spouse's employer plan.</p>
+    <h2>How Much Does COBRA Cost on Average?</h2>
+    <p>KFF's annual Employer Health Benefits Survey puts the average <strong>total</strong> premium (employer + employee share combined — the amount a COBRA enrollee pays) at roughly <strong>$700-$750/month for single coverage</strong> and <strong>$2,000-$2,100/month for family coverage</strong>, before the 2% admin fee. Your actual number depends entirely on your former employer's specific plan — use the calculator above with your own payroll-deduction and employer-contribution figures (both appear on your final pay stub or a COBRA election notice) rather than a national average.</p>
+    <h2>How Is COBRA Calculated From Your W-2 or Pay Stub?</h2>
+    <p>Your former employer must send you a COBRA election notice stating the exact premium — you don't need to calculate it yourself from a W-2. If you want to estimate before that notice arrives: find your per-paycheck health-insurance deduction on a recent pay stub (not your W-2, which only shows annual totals), multiply by your pay frequency to get a monthly figure, then ask HR/payroll for the employer's monthly contribution amount to plug into the calculator above.</p>
     <div class="disclaimer">Estimate only. Actual COBRA premiums are set by your specific former employer's plan documents. Contact your HR department or plan administrator for your exact rate.</div>
   `,
   formula: 'Monthly COBRA Premium = (Employee Payroll Deduction + Employer Contribution) × (1 + Admin Fee %)',
   faq: [
     { q: 'How long does COBRA coverage last?', a: 'Typically up to 18 months after a qualifying event like job loss or reduced hours, though certain circumstances (disability, divorce, death of the covered employee) can extend it to 29 or 36 months.' },
     { q: 'Is COBRA cheaper than an ACA marketplace plan?', a: 'Not usually — because COBRA requires you to pay 100% of the premium plus a 2% fee, marketplace plans with income-based subsidies are frequently cheaper for the same coverage tier. Always compare both before deciding.' },
-    { q: 'Can I decline COBRA and buy a marketplace plan instead?', a: 'Yes. Losing job-based coverage triggers a Special Enrollment Period for ACA marketplace plans, so you are not required to elect COBRA.' }
+    { q: 'Can I decline COBRA and buy a marketplace plan instead?', a: 'Yes. Losing job-based coverage triggers a Special Enrollment Period for ACA marketplace plans, so you are not required to elect COBRA.' },
+    { q: 'How much does COBRA insurance cost per month on average?', a: 'KFF survey data puts average total premiums around $700-$750/month for single coverage and $2,000-$2,100/month for family coverage, though your exact rate depends on your former employer\'s specific plan — use the calculator above with your own numbers.' },
+    { q: 'How do I figure out my COBRA cost from my pay stub?', a: 'Find your per-paycheck health insurance deduction on a recent pay stub, multiply by your pay frequency for a monthly figure, then ask HR for the employer\'s monthly contribution to add in — your former employer\'s official COBRA election notice will state the exact premium.' }
   ],
   sources: [
     { name: 'U.S. Department of Labor — COBRA Continuation Coverage', url: 'https://www.dol.gov/general/topic/health-plans/cobra' },
@@ -439,13 +447,23 @@ function calcTitle(){
       <li><strong>Lender's policy</strong> protects the mortgage lender's interest up to the loan amount, and is typically required by any lender as a condition of the mortgage.</li>
     </ul>
     <p>This calculator uses a simplified national-average rate (roughly $5 per $1,000 of purchase price for the owner's policy, and $2.50 per $1,000 of loan amount for the lender's policy) — actual rates vary significantly by state, since some states regulate title insurance rates directly and others allow competitive pricing.</p>
+    <h2>Why Title Insurance Cost Varies So Much by State and City</h2>
+    <p>Title insurance is regulated at the state level, not federally, so the same $400,000 home can carry a very different premium depending on where it's located:</p>
+    <ul>
+      <li><strong>Rate-regulated states</strong> (e.g. Texas, New York, Florida, New Mexico) set a fixed promulgated rate schedule that every insurer must charge — the price is essentially the same everywhere in that state for a given purchase price.</li>
+      <li><strong>File-and-use / competitive states</strong> (most others, including North Dakota, Maryland, Virginia) let insurers set their own rates within regulatory limits, so premiums can vary by company and even by county — a Baltimore, MD or Richmond, VA closing can quote noticeably differently than a rural closing in the same state.</li>
+      <li><strong>Simultaneous-issue discounts</strong> (buying the owner's and lender's policy from the same insurer at the same closing) can cut the combined cost significantly and are available in most states, including North Dakota — always ask your title company whether it applies.</li>
+    </ul>
+    <p>Because of this variation, use the calculator above as a starting estimate, then request an itemized Loan Estimate or Closing Disclosure quote from a title company local to your specific state/city for the real number.</p>
     <div class="disclaimer">Estimate only. Title insurance rates are state-regulated and vary widely — get an itemized quote from a title company or your closing attorney for an exact figure.</div>
   `,
   formula: 'Owner\'s Policy = Purchase Price × 0.5% · Lender\'s Policy = Loan Amount × 0.25% · Total = Owner\'s Policy + Lender\'s Policy',
   faq: [
     { q: 'Do I really need title insurance?', a: 'Lender\'s title insurance is virtually always required if you\'re financing the purchase. Owner\'s title insurance is optional but strongly recommended — it\'s the only policy that protects your own equity in the home, not just the bank\'s.' },
     { q: 'Who pays for title insurance — buyer or seller?', a: 'It varies by state and local custom. In some states the seller customarily pays for the owner\'s policy, in others the buyer pays for both policies. Check local convention or ask your closing agent.' },
-    { q: 'Is title insurance a one-time cost?', a: 'Yes — unlike homeowners or life insurance, title insurance is paid once at closing and covers you for as long as you (or your heirs) hold an interest in the property.' }
+    { q: 'Is title insurance a one-time cost?', a: 'Yes — unlike homeowners or life insurance, title insurance is paid once at closing and covers you for as long as you (or your heirs) hold an interest in the property.' },
+    { q: 'Why does title insurance cost different amounts in different states?', a: 'Some states (like Texas, New York, and New Mexico) set a fixed promulgated rate every insurer must charge, while others (including North Dakota, Maryland, and Virginia) let insurers set their own rates within limits — so the same purchase price can produce different quotes depending on state and even county.' },
+    { q: 'Does title insurance cost differ by city, like Baltimore or Richmond?', a: 'Within a non-rate-regulated state, yes — insurers can price differently by county or metro area, so a Baltimore, MD or Richmond, VA quote may not match a quote elsewhere in the same state. Use this calculator for a starting estimate, then get a local itemized quote.' }
   ],
   sources: [
     { name: 'CFPB — What Is Title Insurance?', url: 'https://www.consumerfinance.gov/ask-cfpb/what-is-title-insurance-en-164/' },
