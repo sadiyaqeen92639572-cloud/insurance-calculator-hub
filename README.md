@@ -7,11 +7,17 @@ Live at [coverformula.com](https://coverformula.com)
 ## Calculators
 
 - Life Insurance (DIME method)
+- Life Insurance Simulator (premium by age / term / health class)
+- Annuity Simulator (immediate & deferred income)
 - Disability Insurance
 - Umbrella Insurance
 - COBRA Cost
 - Title Insurance
 - PMI Removal
+- Mortgage Refinance Break-Even
+- HSA Savings
+- Auto Insurance Premium Estimator
+- Social Security Estimate
 
 ## Free Companion Tools
 
@@ -19,4 +25,10 @@ Live at [coverformula.com](https://coverformula.com)
 
 ## Stack
 
-Static HTML/CSS/vanilla JS, generated via `generate-pages.js`, deployed to Cloudflare Pages.
+Static HTML/CSS/vanilla JS, deployed to Cloudflare Pages.
+
+Hand-maintained since the Phase 5 calculators. To add a page: copy an existing
+page dir as a template, then update `index.html` (hub-grid, footer, ItemList
+JSON-LD, badge count) and `sitemap.xml`. The old `generate-pages.js.deprecated`
+is kept for reference only — it is out of sync and must not be run (it would
+overwrite the index and wipe every page added since Phase 5).

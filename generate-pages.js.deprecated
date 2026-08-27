@@ -1,3 +1,25 @@
+// ============================================================================
+// DEPRECATED — DO NOT RUN. Kept for reference only.
+//
+// The site has been hand-maintained since commit fd86567 (Phase 5 calculators).
+// This script is out of sync in two ways:
+//   1. Missing page definitions: refinance-break-even-calculator, hsa-savings-
+//      calculator, auto-insurance-premium-estimator, social-security-estimate-
+//      calculator, life-insurance-simulator, annuity-simulator, and the whole
+//      guides/ section. It only knows the original 6 calculators.
+//   2. Stale layout(): no guides nav link, no HowTo JSON-LD, and it predates the
+//      mobile padding fix (dd76f69), the CoverFormula rebrand (869ec6f), the
+//      visible formula block (979181c) and the content-gap sections (8bd0b9d).
+//
+// Running `node generate-pages.js` would OVERWRITE index.html + sitemap.xml with
+// a 6-calculator version and wipe every page added since Phase 5.
+//
+// To add a new calculator page: copy an existing page dir (e.g.
+// refinance-break-even-calculator/) as a template, then manually update
+// index.html (hub-grid + footer + ItemList JSON-LD + badge count) and
+// sitemap.xml. That is the current, real workflow.
+// ============================================================================
+
 const fs = require('fs');
 const path = require('path');
 

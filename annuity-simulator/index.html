@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="lVhyIf5vqU6t8al6L3m0eR_8A4l2OXZDoX0sfm28y6k" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annuity Simulator — Estimate Monthly Income From a Lump Sum | CoverFormula</title>
+<meta name="description" content="Simulate the monthly retirement income a lump-sum premium could buy from an immediate or deferred annuity, by age, sex, and payout option. Free, browser-only.">
+<link rel="canonical" href="https://coverformula.com/annuity-simulator/">
+<meta property="og:title" content="Annuity Simulator — Estimate Monthly Income From a Lump Sum | CoverFormula">
+<meta property="og:description" content="Simulate the monthly retirement income a lump-sum premium could buy from an immediate or deferred annuity, by age, sex, and payout option. Free, browser-only.">
+<meta property="og:url" content="https://coverformula.com/annuity-simulator/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://coverformula.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Annuity Simulator — Estimate Monthly Income From a Lump Sum | CoverFormula">
+<meta name="twitter:description" content="Simulate the monthly retirement income a lump-sum premium could buy from an immediate or deferred annuity, by age, sex, and payout option. Free, browser-only.">
+<meta name="twitter:image" content="https://coverformula.com/assets/og-image.png">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Annuity Simulator","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://coverformula.com/annuity-simulator/","description":"Simulate the monthly retirement income a lump-sum premium could buy from an immediate or deferred annuity, by age, sex, and payout option.","dateModified":"2026-08-27","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"CoverFormula","url":"https://coverformula.com","legalName":"Gesmine-Invest Limited","identifier":{"@type":"PropertyValue","propertyID":"UK Company Number","value":"14120136"},"address":{"@type":"PostalAddress","streetAddress":"Hardy House, 269 Poynders Gardens","addressLocality":"London","postalCode":"SW4 8PQ","addressCountry":"GB"}},"publisher":{"@type":"Organization","name":"CoverFormula","url":"https://coverformula.com","legalName":"Gesmine-Invest Limited","identifier":{"@type":"PropertyValue","propertyID":"UK Company Number","value":"14120136"},"address":{"@type":"PostalAddress","streetAddress":"Hardy House, 269 Poynders Gardens","addressLocality":"London","postalCode":"SW4 8PQ","addressCountry":"GB"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://coverformula.com/"},{"@type":"ListItem","position":2,"name":"Annuity Simulator","item":"https://coverformula.com/annuity-simulator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does this annuity simulator estimate monthly income?","acceptedAnswer":{"@type":"Answer","text":"For an immediate annuity it multiplies your premium by an annual payout rate that rises with the age income begins, then adjusts for sex and payout option and divides by 12. For a deferred annuity it first grows the premium at an assumed annual rate until the income start age, then applies the payout rate at that age. Payout rates are rules of thumb based on typical single-premium immediate annuity pricing, not live insurer quotes."}},{"@type":"Question","name":"Why does waiting to start income raise the monthly payment so much?","acceptedAnswer":{"@type":"Answer","text":"Two effects stack. The premium has more years to grow before payments begin, and the insurer spreads the payout over a shorter expected lifespan, so the payout rate itself is higher at older start ages. Together these can roughly double the monthly income between starting at 60 and starting at 75."}},{"@type":"Question","name":"What does life with 10-year certain mean?","acceptedAnswer":{"@type":"Answer","text":"It pays for as long as you live, but guarantees at least 10 years of payments to a beneficiary if you die early. That guarantee slightly lowers the monthly amount versus a straight single-life annuity, which stops entirely at death."}},{"@type":"Question","name":"Is an annuity payout rate the same as investment return?","acceptedAnswer":{"@type":"Answer","text":"No. A payout rate blends return of your own principal with interest and a mortality credit, so a 7% payout rate does not mean a 7% return. Part of every check is your own money coming back. Compare annuities on guaranteed income for the premium, not on payout rate alone."}}]},{"@type":"HowTo","name":"How to Simulate Annuity Income","step":[{"@type":"HowToStep","name":"Enter your premium","text":"Enter the lump sum you would put into the annuity."},{"@type":"HowToStep","name":"Enter your current age and income start age","text":"Enter your age today and the age you want income to begin. Set them equal for an immediate annuity."},{"@type":"HowToStep","name":"Choose sex and payout option","text":"Pick sex and whether you want single life, life with 10-year certain, or joint life."},{"@type":"HowToStep","name":"Run the simulation","text":"Click Simulate Income to see the estimated monthly and annual income, the payout rate used, and how many years of payments it takes to recoup the premium."}]}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="../" class="brand"><span class="dot">🛡</span> CoverFormula</a>
+    <nav class="top">
+      <a href="../#calculators">Calculators</a>
+      <a href="../guides/">Guides</a>
+      <a href="../about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">Retirement</span><br>
+    <h1>Annuity Simulator</h1>
+    <p class="lead">Simulate the monthly retirement income a lump-sum premium could buy from an immediate or deferred annuity.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="calc-card">
+    <h2 style="margin-top:0;font-size:1.2rem;">Simulate Your Annuity Income</h2>
+    <div class="calc-grid">
+      <div class="field"><label>Premium / Lump Sum ($)</label><input type="number" id="an-premium" value="250000" step="10000"></div>
+      <div class="field"><label>Current Age</label><input type="number" id="an-age" value="60" min="40" max="85"></div>
+      <div class="field"><label>Income Start Age</label><input type="number" id="an-start" value="65" min="50" max="90"><div class="hint">Set equal to current age for an immediate annuity.</div></div>
+      <div class="field"><label>Sex</label><select id="an-sex"><option value="m">Male</option><option value="f">Female</option></select></div>
+      <div class="field"><label>Payout Option</label><select id="an-type"><option value="1.0">Single life</option><option value="0.97">Life with 10-year certain</option><option value="0.86">Joint life (both spouses)</option></select></div>
+      <div class="field"><label>Deferred Growth Rate (%)</label><input type="number" id="an-growth" value="4" step="0.25"><div class="hint">Assumed annual growth of the premium before income starts. Ignored for an immediate annuity.</div></div>
+    </div>
+    <button class="calc-btn" onclick="simAnnuity()">Simulate Income</button>
+    <div class="result-box" id="an-result" style="display:none;">
+      <div class="result-row hero-result"><span class="k">Estimated Monthly Income</span><span class="v" id="an-monthly"></span></div>
+      <div class="result-row"><span class="k">Estimated Annual Income</span><span class="v" id="an-annual"></span></div>
+      <div class="result-row"><span class="k">Payout Rate at Start Age</span><span class="v" id="an-rate"></span></div>
+      <div class="result-row"><span class="k">Premium Value When Income Starts</span><span class="v" id="an-value"></span></div>
+      <div class="result-row"><span class="k">Years of Payments to Recoup Premium</span><span class="v" id="an-recoup"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap content">
+<p style="font-size:.78rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Written &amp; fact-checked by the CoverFormula editorial team · Last reviewed 2026-08-27</p>
+
+<h2>What This Simulator Does</h2>
+<p>An income annuity converts a lump sum into a stream of guaranteed payments for life. This tool simulates roughly how large that monthly payment could be for a premium, age, and payout option you choose. It covers single-premium immediate annuities (income starts now) and deferred income annuities (you fund it now, income starts later). It does not model variable annuities, indexed annuities, or products with cash-value withdrawal features.</p>
+
+<h2>How the Estimate Is Built</h2>
+<p>For an immediate annuity, the simulator multiplies your premium by an annual payout rate that depends on the age income begins — using anchor points at ages 60, 65, 70, 75 and 80 and interpolating between them — then adjusts for sex (women receive slightly lower payments because they live longer on average) and for the payout option, and divides by 12. For a deferred annuity, it first grows the premium at your assumed annual rate from your current age to the income start age, then applies the payout rate at that later age. The "years to recoup" figure divides the premium by the annual income, showing how long payments must continue before you have received your original money back.</p>
+
+<div class="disclaimer">Estimate only. Real annuity quotes change daily with interest rates and vary significantly between insurers. A payout rate is not an investment return — every payment is part return of your own principal, part interest, part mortality credit. Always compare firm quotes from multiple A-rated carriers before buying.</div>
+
+<div class="formula-box"><div class="label">Formula</div><code>Immediate:  Annual income ≈ Premium × payoutRate(startAge) × sexFactor × optionFactor
+Deferred:   Value at start = Premium × (1 + growthRate)^(startAge − currentAge)
+            Annual income ≈ Value at start × payoutRate(startAge) × sexFactor × optionFactor
+Monthly income = Annual income ÷ 12
+
+payoutRate  = 5.8% (60) · 6.5% (65) · 7.4% (70) · 8.7% (75) · 10.5% (80), interpolated
+sexFactor   = 1.00 male · 0.94 female
+optionFactor= 1.00 single life · 0.97 life w/ 10-yr certain · 0.86 joint life</code></div>
+
+<h2>How to Use This Simulator</h2>
+<ol><li>Enter the premium you would place in the annuity.</li><li>Enter your current age and the age you want income to begin — set them equal for an immediate annuity.</li><li>Choose sex and a payout option.</li><li>For a deferred annuity, set the assumed growth rate for the funding period.</li><li>Click Simulate Income to see the estimated monthly and annual income, the payout rate used, and the years-to-recoup figure.</li></ol>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>How does this annuity simulator estimate monthly income?</h3><p>For an immediate annuity it multiplies your premium by an annual payout rate that rises with the age income begins, then adjusts for sex and payout option and divides by 12. For a deferred annuity it first grows the premium at an assumed annual rate until the income start age, then applies the payout rate at that age. Payout rates are rules of thumb based on typical single-premium immediate annuity pricing, not live insurer quotes.</p></div>
+<div class="faq-item"><h3>Why does waiting to start income raise the monthly payment so much?</h3><p>Two effects stack. The premium has more years to grow before payments begin, and the insurer spreads the payout over a shorter expected lifespan, so the payout rate itself is higher at older start ages. Together these can roughly double the monthly income between starting at 60 and starting at 75.</p></div>
+<div class="faq-item"><h3>What does life with 10-year certain mean?</h3><p>It pays for as long as you live, but guarantees at least 10 years of payments to a beneficiary if you die early. That guarantee slightly lowers the monthly amount versus a straight single-life annuity, which stops entirely at death.</p></div>
+<div class="faq-item"><h3>Is an annuity payout rate the same as investment return?</h3><p>No. A payout rate blends return of your own principal with interest and a mortality credit, so a 7% payout rate does not mean a 7% return. Part of every check is your own money coming back. Compare annuities on guaranteed income for the premium, not on payout rate alone.</p></div>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.consumerfinance.gov/consumer-tools/retirement/before-you-claim/" target="_blank" rel="noopener noreferrer nofollow">Consumer Financial Protection Bureau — Planning for Retirement</a></li>
+<li><a href="https://content.naic.org/consumer/annuities.htm" target="_blank" rel="noopener noreferrer nofollow">National Association of Insurance Commissioners — Annuities Buyer's Guide</a></li>
+</ul>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>CoverFormula</h4>
+        <p style="font-size:.82rem;max-width:360px;color:#94a3b8;">Free, independent insurance and mortgage-insurance calculators. Estimates only — always confirm figures with a licensed agent or your policy documents before making a decision.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="../life-insurance-calculator/">Life Insurance</a>
+        <a href="../life-insurance-simulator/">Life Insurance Simulator</a>
+        <a href="../annuity-simulator/">Annuity Simulator</a>
+        <a href="../disability-insurance-calculator/">Disability Insurance</a>
+        <a href="../umbrella-insurance-calculator/">Umbrella Insurance</a>
+        <a href="../cobra-insurance-calculator/">COBRA Cost</a>
+        <a href="../title-insurance-calculator/">Title Insurance</a>
+        <a href="../pmi-removal-calculator/">PMI Removal</a>
+        <a href="../refinance-break-even-calculator/">Refinance Break-Even</a>
+        <a href="../hsa-savings-calculator/">HSA Savings</a>
+        <a href="../auto-insurance-premium-estimator/">Auto Insurance Estimator</a>
+        <a href="../social-security-estimate-calculator/">Social Security Estimate</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="../guides/">Guides</a>
+        <a href="../about/">About &amp; Methodology</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© 2026 CoverFormula. All calculators are for educational estimation purposes only and do not constitute insurance, financial, tax, or legal advice.</p>
+      <p>CoverFormula is part of Gesmine-Invest Limited, registered UK company number 14120136, registered office address at Hardy House, 269 Poynders Gardens, London, London, United Kingdom, SW4 8PQ.</p>
+    </div>
+  </div>
+</footer>
+<script>
+function simAnnuity(){
+  var premium=+document.getElementById('an-premium').value||0;
+  var age=+document.getElementById('an-age').value||60;
+  var start=+document.getElementById('an-start').value||age;
+  if(start<age)start=age;
+  var sex=document.getElementById('an-sex').value;
+  var optionF=+document.getElementById('an-type').value||1;
+  var growth=(+document.getElementById('an-growth').value||0)/100;
+  var sexF=sex==='f'?0.94:1.0;
+  var anchors=[[60,0.058],[65,0.065],[70,0.074],[75,0.087],[80,0.105]];
+  function payoutRate(a){
+    if(a<=anchors[0][0])return anchors[0][1];
+    if(a>=anchors[anchors.length-1][0]){
+      var last=anchors[anchors.length-1];var prev=anchors[anchors.length-2];
+      var slope=(last[1]-prev[1])/(last[0]-prev[0]);
+      return last[1]+slope*(a-last[0]);
+    }
+    for(var i=0;i<anchors.length-1;i++){
+      if(a>=anchors[i][0]&&a<=anchors[i+1][0]){
+        var t=(a-anchors[i][0])/(anchors[i+1][0]-anchors[i][0]);
+        return anchors[i][1]+t*(anchors[i+1][1]-anchors[i][1]);
+      }
+    }
+    return anchors[anchors.length-1][1];
+  }
+  var deferYears=start-age;
+  var valueAtStart=premium*Math.pow(1+growth,deferYears);
+  var rate=payoutRate(start);
+  var annual=valueAtStart*rate*sexF*optionF;
+  var monthly=annual/12;
+  var fmt=function(n){return '$'+Math.round(n).toLocaleString();};
+  document.getElementById('an-monthly').textContent=fmt(monthly)+'/mo';
+  document.getElementById('an-annual').textContent=fmt(annual)+'/yr';
+  document.getElementById('an-rate').textContent=(rate*sexF*optionF*100).toFixed(2)+'%';
+  document.getElementById('an-value').textContent=fmt(valueAtStart)+(deferYears>0?' (after '+deferYears+' yr)':' (immediate)');
+  document.getElementById('an-recoup').textContent=annual>0?(premium/annual).toFixed(1)+' years':'—';
+  document.getElementById('an-result').style.display='block';
+}
+</script>
+</body>
+</html>

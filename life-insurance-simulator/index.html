@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="lVhyIf5vqU6t8al6L3m0eR_8A4l2OXZDoX0sfm28y6k" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Insurance Simulator — Estimate Your Monthly Premium by Age | CoverFormula</title>
+<meta name="description" content="Simulate the estimated monthly cost of term life insurance across ages, term lengths, coverage amounts, and health classes. Free, browser-only, no email.">
+<link rel="canonical" href="https://coverformula.com/life-insurance-simulator/">
+<meta property="og:title" content="Life Insurance Simulator — Estimate Your Monthly Premium by Age | CoverFormula">
+<meta property="og:description" content="Simulate the estimated monthly cost of term life insurance across ages, term lengths, coverage amounts, and health classes. Free, browser-only, no email.">
+<meta property="og:url" content="https://coverformula.com/life-insurance-simulator/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://coverformula.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Life Insurance Simulator — Estimate Your Monthly Premium by Age | CoverFormula">
+<meta name="twitter:description" content="Simulate the estimated monthly cost of term life insurance across ages, term lengths, coverage amounts, and health classes. Free, browser-only, no email.">
+<meta name="twitter:image" content="https://coverformula.com/assets/og-image.png">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Life Insurance Simulator","applicationCategory":"FinanceApplication","operatingSystem":"Web","url":"https://coverformula.com/life-insurance-simulator/","description":"Simulate the estimated monthly cost of term life insurance across ages, term lengths, coverage amounts, and health classes.","dateModified":"2026-08-27","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"CoverFormula","url":"https://coverformula.com","legalName":"Gesmine-Invest Limited","identifier":{"@type":"PropertyValue","propertyID":"UK Company Number","value":"14120136"},"address":{"@type":"PostalAddress","streetAddress":"Hardy House, 269 Poynders Gardens","addressLocality":"London","postalCode":"SW4 8PQ","addressCountry":"GB"}},"publisher":{"@type":"Organization","name":"CoverFormula","url":"https://coverformula.com","legalName":"Gesmine-Invest Limited","identifier":{"@type":"PropertyValue","propertyID":"UK Company Number","value":"14120136"},"address":{"@type":"PostalAddress","streetAddress":"Hardy House, 269 Poynders Gardens","addressLocality":"London","postalCode":"SW4 8PQ","addressCountry":"GB"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://coverformula.com/"},{"@type":"ListItem","position":2,"name":"Life Insurance Simulator","item":"https://coverformula.com/life-insurance-simulator/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the life insurance premium in this simulator estimated?","acceptedAnswer":{"@type":"Answer","text":"It applies a base annual rate per $1,000 of coverage that rises with your age, then multiplies it by factors for the term length, health class, tobacco use, and sex. These factors approximate how life insurers price level term policies, but they are rules of thumb — a real quote depends on your medical exam, family history, driving record, hobbies, and the specific insurer."}},{"@type":"Question","name":"Why does the premium jump so much at older ages?","acceptedAnswer":{"@type":"Answer","text":"Term life pricing tracks mortality risk, which climbs steeply after about age 45 and roughly doubles every seven to eight years thereafter. Buying a longer level term while you are younger locks in a lower rate for the whole term, which is why a 30-year term bought at 35 can cost less per year than a 20-year term bought at 50."}},{"@type":"Question","name":"Does this simulator tell me how much coverage I need?","acceptedAnswer":{"@type":"Answer","text":"No. This tool simulates cost for a coverage amount you choose. To size the coverage amount itself, use the CoverFormula Life Insurance Calculator, which applies the DIME method (Debt, Income, Mortgage, Education)."}},{"@type":"Question","name":"Is term or whole life cheaper?","acceptedAnswer":{"@type":"Answer","text":"Term life is far cheaper for the same death benefit because it has no cash value and covers only a fixed period. Whole life can cost five to fifteen times more per $1,000 of coverage. This simulator models term life only."}}]},{"@type":"HowTo","name":"How to Simulate Your Life Insurance Premium","step":[{"@type":"HowToStep","name":"Enter your age and sex","text":"Enter your current age and sex, which are the two largest drivers of term life pricing."},{"@type":"HowToStep","name":"Choose coverage and term","text":"Enter the death benefit you want to model and the level term length in years."},{"@type":"HowToStep","name":"Set your health class and tobacco use","text":"Pick the underwriting health class you expect to qualify for and whether you use tobacco."},{"@type":"HowToStep","name":"Run the simulation","text":"Click Simulate Premium to see the estimated monthly and annual cost, plus how the cost changes across term lengths."}]}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a href="../" class="brand"><span class="dot">🛡</span> CoverFormula</a>
+    <nav class="top">
+      <a href="../#calculators">Calculators</a>
+      <a href="../guides/">Guides</a>
+      <a href="../about/">About</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">Life</span><br>
+    <h1>Life Insurance Simulator</h1>
+    <p class="lead">Simulate the estimated monthly cost of term life insurance across ages, term lengths, coverage amounts, and health classes.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="calc-card">
+    <h2 style="margin-top:0;font-size:1.2rem;">Simulate Your Term Life Premium</h2>
+    <div class="calc-grid">
+      <div class="field"><label>Current Age</label><input type="number" id="li-age" value="35" min="18" max="75"></div>
+      <div class="field"><label>Sex</label><select id="li-sex"><option value="m">Male</option><option value="f">Female</option></select><div class="hint">Insurers price by biological sex on the application.</div></div>
+      <div class="field"><label>Coverage Amount ($)</label><input type="number" id="li-face" value="500000" step="50000"></div>
+      <div class="field"><label>Level Term Length (years)</label><select id="li-term"><option value="10">10</option><option value="15">15</option><option value="20" selected>20</option><option value="30">30</option></select></div>
+      <div class="field"><label>Health Class</label><select id="li-health"><option value="0.85">Preferred Plus</option><option value="1.0" selected>Preferred</option><option value="1.45">Standard</option><option value="2.3">Substandard / rated</option></select><div class="hint">Set by the medical exam and history — most applicants land at Preferred or Standard.</div></div>
+      <div class="field"><label>Tobacco Use</label><select id="li-smoke"><option value="1">Non-tobacco</option><option value="2.6">Tobacco / nicotine</option></select></div>
+    </div>
+    <button class="calc-btn" onclick="simLife()">Simulate Premium</button>
+    <div class="result-box" id="li-result" style="display:none;">
+      <div class="result-row hero-result"><span class="k">Estimated Monthly Premium</span><span class="v" id="li-monthly"></span></div>
+      <div class="result-row"><span class="k">Estimated Annual Premium</span><span class="v" id="li-annual"></span></div>
+      <div class="result-row"><span class="k">Cost per $1,000 of coverage / year</span><span class="v" id="li-per1k"></span></div>
+      <div style="margin-top:18px;overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:.92rem;">
+          <thead><tr><th style="text-align:left;padding:8px 10px;border-bottom:2px solid var(--border);">Term length</th><th style="text-align:right;padding:8px 10px;border-bottom:2px solid var(--border);">Est. monthly</th></tr></thead>
+          <tbody id="li-scenario"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap content">
+<p style="font-size:.78rem;color:#64748b;font-weight:700;text-transform:uppercase;letter-spacing:.04em;">Written &amp; fact-checked by the CoverFormula editorial team · Last reviewed 2026-08-27</p>
+
+<p style="background:var(--bg);border:1px solid var(--border);border-left:4px solid var(--blue);border-radius:10px;padding:16px 20px;font-size:.92rem;color:var(--slate);margin:24px 0;">Looking for <em>how much</em> coverage to buy, not what it costs? Use the <a href="../life-insurance-calculator/">Life Insurance Calculator</a> (DIME method) to size your death benefit first, then come back here to simulate the premium.</p>
+
+<h2>What This Simulator Does</h2>
+<p>This tool estimates what a level term life insurance policy would cost per month for a coverage amount and term you choose. It is a pricing simulation, not a quote and not a needs analysis. Term life is the cheapest way to buy a large death benefit because the policy has no cash value and ends when the level term does — this simulator models term life only, not whole life or universal life.</p>
+
+<h2>How the Estimate Is Built</h2>
+<p>The simulator starts from a base annual rate per $1,000 of coverage that increases with age, using anchor points at ages 25, 30, 35, 40, 45, 50, 55, 60 and 65 and interpolating in between. It then applies multipliers: a term-length factor (a 10-year term is cheaper than a 30-year term because the insurer is on risk for less time), a health-class factor, a tobacco factor, and a sex factor. The result is divided by 12 for the monthly figure. Real underwriting also weighs family medical history, build (height and weight), blood and urine labs, prescription history, driving record, and risky hobbies — none of which a simulator can see.</p>
+
+<div class="disclaimer">Estimate only. Actual premiums vary widely by insurer and by your individual underwriting result. Treat the output as a directional range to help you shop, not a price you are guaranteed.</div>
+
+<div class="formula-box"><div class="label">Formula</div><code>Monthly premium ≈ (Coverage ÷ 1,000) × baseRate(age) × termFactor × healthFactor × tobaccoFactor × sexFactor ÷ 12
+
+baseRate(age) = annual $ per $1,000 of coverage, interpolated between age anchors
+termFactor    = 0.72 (10y) · 0.85 (15y) · 1.00 (20y) · 1.45 (30y)
+tobaccoFactor = 1.0 non-tobacco · 2.6 tobacco
+sexFactor     = 1.0 male · 0.85 female</code></div>
+
+<h2>How to Use This Simulator</h2>
+<ol><li>Enter your current age and sex.</li><li>Enter the coverage amount you want to model and pick a level term length.</li><li>Choose the health class you expect to qualify for and your tobacco status.</li><li>Click Simulate Premium to see the estimated monthly and annual cost, plus a side-by-side of all four term lengths.</li></ol>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><h3>How is the life insurance premium in this simulator estimated?</h3><p>It applies a base annual rate per $1,000 of coverage that rises with your age, then multiplies it by factors for the term length, health class, tobacco use, and sex. These factors approximate how life insurers price level term policies, but they are rules of thumb — a real quote depends on your medical exam, family history, driving record, hobbies, and the specific insurer.</p></div>
+<div class="faq-item"><h3>Why does the premium jump so much at older ages?</h3><p>Term life pricing tracks mortality risk, which climbs steeply after about age 45 and roughly doubles every seven to eight years thereafter. Buying a longer level term while you are younger locks in a lower rate for the whole term, which is why a 30-year term bought at 35 can cost less per year than a 20-year term bought at 50.</p></div>
+<div class="faq-item"><h3>Does this simulator tell me how much coverage I need?</h3><p>No. This tool simulates cost for a coverage amount you choose. To size the coverage amount itself, use the <a href="../life-insurance-calculator/">CoverFormula Life Insurance Calculator</a>, which applies the DIME method (Debt, Income, Mortgage, Education).</p></div>
+<div class="faq-item"><h3>Is term or whole life cheaper?</h3><p>Term life is far cheaper for the same death benefit because it has no cash value and covers only a fixed period. Whole life can cost five to fifteen times more per $1,000 of coverage. This simulator models term life only.</p></div>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://content.naic.org/consumer/life-insurance.htm" target="_blank" rel="noopener noreferrer nofollow">National Association of Insurance Commissioners — Life Insurance Buyer's Guide</a></li>
+<li><a href="https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-term-and-whole-life-insurance-en-1449/" target="_blank" rel="noopener noreferrer nofollow">Consumer Financial Protection Bureau — Term vs. Whole Life</a></li>
+</ul>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>CoverFormula</h4>
+        <p style="font-size:.82rem;max-width:360px;color:#94a3b8;">Free, independent insurance and mortgage-insurance calculators. Estimates only — always confirm figures with a licensed agent or your policy documents before making a decision.</p>
+      </div>
+      <div>
+        <h4>Calculators</h4>
+        <a href="../life-insurance-calculator/">Life Insurance</a>
+        <a href="../life-insurance-simulator/">Life Insurance Simulator</a>
+        <a href="../annuity-simulator/">Annuity Simulator</a>
+        <a href="../disability-insurance-calculator/">Disability Insurance</a>
+        <a href="../umbrella-insurance-calculator/">Umbrella Insurance</a>
+        <a href="../cobra-insurance-calculator/">COBRA Cost</a>
+        <a href="../title-insurance-calculator/">Title Insurance</a>
+        <a href="../pmi-removal-calculator/">PMI Removal</a>
+        <a href="../refinance-break-even-calculator/">Refinance Break-Even</a>
+        <a href="../hsa-savings-calculator/">HSA Savings</a>
+        <a href="../auto-insurance-premium-estimator/">Auto Insurance Estimator</a>
+        <a href="../social-security-estimate-calculator/">Social Security Estimate</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="../guides/">Guides</a>
+        <a href="../about/">About &amp; Methodology</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>© 2026 CoverFormula. All calculators are for educational estimation purposes only and do not constitute insurance, financial, tax, or legal advice.</p>
+      <p>CoverFormula is part of Gesmine-Invest Limited, registered UK company number 14120136, registered office address at Hardy House, 269 Poynders Gardens, London, London, United Kingdom, SW4 8PQ.</p>
+    </div>
+  </div>
+</footer>
+<script>
+function simLife(){
+  var age=+document.getElementById('li-age').value||35;
+  var sex=document.getElementById('li-sex').value;
+  var face=+document.getElementById('li-face').value||0;
+  var health=+document.getElementById('li-health').value||1;
+  var smoke=+document.getElementById('li-smoke').value||1;
+  var sexF=sex==='f'?0.85:1.0;
+  // annual $ per $1,000 of coverage, 20-year level term, Preferred non-tobacco male
+  var anchors=[[25,0.62],[30,0.66],[35,0.74],[40,1.02],[45,1.62],[50,2.58],[55,4.10],[60,6.90],[65,12.00]];
+  function baseRate(a){
+    if(a<=anchors[0][0])return anchors[0][1];
+    if(a>=anchors[anchors.length-1][0]){
+      var last=anchors[anchors.length-1];var prev=anchors[anchors.length-2];
+      var slope=(last[1]-prev[1])/(last[0]-prev[0]);
+      return last[1]+slope*(a-last[0]);
+    }
+    for(var i=0;i<anchors.length-1;i++){
+      if(a>=anchors[i][0]&&a<=anchors[i+1][0]){
+        var t=(a-anchors[i][0])/(anchors[i+1][0]-anchors[i][0]);
+        return anchors[i][1]+t*(anchors[i+1][1]-anchors[i][1]);
+      }
+    }
+    return anchors[anchors.length-1][1];
+  }
+  var termFactors={10:0.72,15:0.85,20:1.0,30:1.45};
+  var faceK=face/1000;
+  var br=baseRate(age);
+  function monthlyFor(term){
+    return faceK*br*termFactors[term]*health*smoke*sexF/12;
+  }
+  var term=+document.getElementById('li-term').value;
+  var monthly=monthlyFor(term);
+  var annual=monthly*12;
+  var fmt=function(n){return '$'+Math.round(n).toLocaleString();};
+  document.getElementById('li-monthly').textContent=fmt(monthly)+'/mo';
+  document.getElementById('li-annual').textContent=fmt(annual)+'/yr';
+  document.getElementById('li-per1k').textContent='$'+(faceK>0?(annual/faceK):0).toFixed(2);
+  var rows='';
+  [10,15,20,30].forEach(function(tm){
+    var m=monthlyFor(tm);
+    var hi=tm===term?' style="font-weight:800;background:var(--bg)"':'';
+    rows+='<tr'+hi+'><td style="padding:8px 10px;border-bottom:1px solid var(--border)">'+tm+'-year term</td><td style="padding:8px 10px;text-align:right;border-bottom:1px solid var(--border)">'+fmt(m)+'/mo</td></tr>';
+  });
+  document.getElementById('li-scenario').innerHTML=rows;
+  document.getElementById('li-result').style.display='block';
+}
+</script>
+</body>
+</html>
