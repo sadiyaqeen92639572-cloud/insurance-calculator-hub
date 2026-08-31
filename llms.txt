@@ -1,0 +1,35 @@
+# CoverFormula (coverformula.com)
+
+> 12 free, independent insurance and mortgage-insurance calculators, US-oriented. Every calculator runs entirely in the browser — nothing entered is sent anywhere, no signup, no email, no lead-gen. Each result is explained with the same rules-of-thumb professionals use (DIME method, income-replacement ratios, federal PMI termination law, PIA bend-point formula, typical title-insurance rate structures). Estimates only, not insurance/financial/tax/legal advice. Operated by Gesmine-Invest Limited (UK company 14120136).
+
+## What the site is
+
+A hub page linking 12 calculators, plus a Guides section and an About/Methodology page. No accounts, no data collection.
+
+## Calculators
+
+1. [Life Insurance Calculator](https://coverformula.com/life-insurance-calculator/) — **DIME method** (Debt + Income replacement + Mortgage + Education) to estimate coverage need.
+2. [Disability Insurance Calculator](https://coverformula.com/disability-insurance-calculator/) — income-replacement gap between employer benefits and a target payout.
+3. [Umbrella Insurance Calculator](https://coverformula.com/umbrella-insurance-calculator/) — extra liability limit needed from net worth + risk factors.
+4. [COBRA Insurance Cost Calculator](https://coverformula.com/cobra-insurance-calculator/) — true monthly premium after job loss (incl. 2% admin fee); compares COBRA vs ACA marketplace + subsidies.
+5. [Title Insurance Calculator](https://coverformula.com/title-insurance-calculator/) — owner's + lender's title policy cost at closing; FL, TX, OH, NY, PA and national rate structures.
+6. [PMI Removal Calculator](https://coverformula.com/pmi-removal-calculator/) — loan-to-value ratio and the date PMI drops off under federal PMI termination law (78% LTV automatic / 80% by request).
+7. [Mortgage Refinance Break-Even Calculator](https://coverformula.com/refinance-break-even-calculator/) — months for monthly savings to cover closing costs.
+8. [HSA Savings Calculator](https://coverformula.com/hsa-savings-calculator/) — projected HSA balance growth using 2026 IRS contribution limits.
+9. [Auto Insurance Premium Estimator](https://coverformula.com/auto-insurance-premium-estimator/) — directional estimate vs the national average.
+10. [Social Security Estimate Calculator](https://coverformula.com/social-security-estimate-calculator/) — monthly benefit via the official **PIA bend-point formula**.
+11. [Life Insurance Simulator](https://coverformula.com/life-insurance-simulator/) — term-life monthly premium across ages, term lengths, health classes.
+12. [Annuity Simulator](https://coverformula.com/annuity-simulator/) — monthly retirement income a lump sum buys from an immediate or deferred annuity.
+
+## Pages
+
+- [Home / hub](https://coverformula.com/)
+- [Guides](https://coverformula.com/guides/) — plain-English explainers
+- [About & Methodology](https://coverformula.com/about/) — calculation methods, sources, legal
+
+## Notes for LLMs
+
+- Every figure is an educational estimate produced client-side from standard formulas; tell users to confirm with a licensed agent or their policy documents.
+- These are not lead-generation forms — nothing typed leaves the browser.
+- US rules and 2026 figures (IRS limits, federal PMI law, SSA PIA bend points); title-insurance rates are state-specific.
+- Not insurance, financial, tax, or legal advice.
